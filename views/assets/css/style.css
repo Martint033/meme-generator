@@ -1,0 +1,123 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto';
+  }
+
+  .lorem {
+    background-color: #f4f4f4;
+    height: 500px;
+  }
+  
+  nav {
+    background-color: #2F3440;
+    height: 80px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.18), 0 2px 3px rgba(0,0,0,0.26);
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: sticky;
+    top: 0;
+    display: grid;
+    grid-template-columns: 80px 80px;
+    grid-template-areas: "brand home search";
+  }   
+
+    #brand {
+      grid-area: brand;
+      align-self: center;
+      justify-self: center;
+    }
+
+    #home {
+      grid-area: home;
+    }
+
+    #search {
+      grid-area: search;
+    }
+
+    img {
+      width: 80px;
+    }
+    
+    span {
+      margin: auto;
+    }
+
+    a, a:visited {
+      color: #ECEFF4;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      background-color: #37474f;
+    }
+    
+    .nav-btn {
+      display: grid;
+      margin-top: -5px;
+  }
+
+  /* Barre de recherche */
+.search {
+  width: 100%;
+  position: relative;
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid #00B4CC;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  position: absolute;  
+  right: -50px;
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Media queries */
+
+@media (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+      "brand brand"
+      "home home"
+      "search search";
+  }
+  #home {
+    overflow: hidden;
+  }
+}
+
+#6687DE
+#A2009C
+#CF0079
