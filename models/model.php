@@ -1,15 +1,6 @@
 <?php 
 // ce model contient toutes les requêtes 
-// require_once("utils/db.php");
-
-try {
-
-$dbo = new PDO('mysql:host=localhost;dbname=meme_generator', 'root', '');
-}
-
-catch(PDOException $e){
-    echo'Problem during connection' . $e->getMessage();
-}
+require_once("utils/db.php");
 
 
 

@@ -2,11 +2,34 @@
 {% block content %}
 <main>
     <section class="navigation">
-            <a class="linkNav" href="#"><p class="btn">create your meme </p></a>
-            <a class="linkNav" href="#"><p class="btn">all memes</p></a>
+            <h1 class="titre darkgraytext">Create your meme</h1>
+            <a class="linkNav" href="#"><p class="btn">upload your image</p></a>
+            <p class="subTitle">or select one below</p>
     </section>
     <section class="hotMemes">
-        <h1 class="titre darkgraytext">Hot Memes</h1>
+            <div id="searchIn" >
+                <input type="text" class="searchbarIn" placeholder="Search">
+                <a class="searchButtonIn"><i class="darkgraytext fas fa-search"></i></a>
+            </div>
+            <form>
+                    <div class="multiselect">
+                      <div class="selectBox" onclick="showCheckboxes()">
+                        <select>
+                          <option>Select an option</option>
+                        </select>
+                        <div class="overSelect"></div>
+                      </div>
+                      <div id="checkboxes">
+                        <label for="one">
+                          <input type="checkbox" id="one" />Category 1</label>
+                        <label for="two">
+                          <input type="checkbox" id="two" />Category 2</label>
+                        <label for="three">
+                          <input type="checkbox" id="three" />Category 3</label>
+                      </div>
+                      <button type="submit">Search</button>
+                    </div>
+                  </form>
     </section>
 </main>
 {% endblock %}
