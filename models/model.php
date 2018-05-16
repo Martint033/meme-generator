@@ -1,7 +1,7 @@
 <?php 
 // ce model contient toutes les requêtes 
 
-require_once("utils/db.php")
+require_once("utils/db.php");
 
 
 function listImg () {
