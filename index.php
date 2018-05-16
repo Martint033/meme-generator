@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 // //Rounting
 
@@ -31,5 +32,8 @@
 // } else {
 //     require_once('controllers/ctrlBrowse.php');
 // }
+=======
+    include("controllers/ctrlHomepage.php");
+>>>>>>> 5b17657df5cc01ecb974f682cac7fc30bbfc7f01
 
 ?>
