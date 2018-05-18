@@ -116,6 +116,15 @@ footer{
 
 }
 
+.errorBg{
+  background-image: url("../images/banniere.png");
+}
+
+.errorP{
+  color: red;
+}
+
+/* Media queries */
 #checkboxes {
   display: none;
   border: 1px #dadada solid;
