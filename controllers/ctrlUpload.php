@@ -1,9 +1,11 @@
 <?php
-    
-    $target_dir = "assets/media/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+$target_dir = "assets/medias/images";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$nom = md5(uniqid(rand(), true));
+$target_file = $nom.".".$imageFileType;
 
     // Check if image file is a actual image or fake image
     if(isset($_POST["submit"])) {
@@ -33,8 +35,8 @@
     // if everything is ok, try to upload file
     } 
     else {
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            echo "<p>The file has been upload at ". $target_file ." . . . :)</p>";
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir.'/'.$target_file)) {
+            echo "<p>The file has been upload at ".  $target_dir.'/'.$target_file." . . . </p>";
         } 
         else {
             echo "Sorry, there was an error uploading your file.";
@@ -42,10 +44,9 @@
        
     }
 
-    require("models/model.php");
+require("models/model.php");
 
-    $title = "ca marche";
-    addImg($target_file, $title);
-
-
-?>
+$url = $target_dir.'/'.$target_file;
+$idImg = addImg($nom, $url);
+  
+header('Location: /meme-generator/edit-meme/'.$nom."&".$idImg); 

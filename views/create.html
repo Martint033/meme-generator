@@ -5,10 +5,14 @@
     <div class="navigation">
         <h1 class="titre darkgraytext">Create your meme</h1>
         </div>
-    <div class="navigation">
-        <a class="linkNav" href="#"><label for="file" class="btn">upload your image</label><input id="file" class="input-file" type="file"></a>
-        <p class="subT=itle">or select one below</p>
-    </div>
+        
+        <form class="navigation" action="upload" method="post" enctype="multipart/form-data">
+          <a class="linkNav" ><label for="fileToUpload" class="btn">upload your image</label>
+          <input name="fileToUpload" id="fileToUpload" class="input-file" type="file"></a>
+          <input type="submit" value="Validate" name="submit">
+      </form>
+
+      <p class="subTitle">or select one below</p>
   </section>
     <section class="hotMemes">
             <div id="searchIn" >
@@ -39,7 +43,7 @@
     </section>
     <section class="allImages">
       {% for image in images %}
-      <img class="createImage" src="{{ image.image }}" width="200" height="200">
+      <a href="edit-meme/{{image.newName}}&{{image.id_p}}"><img class="createImage" src="{{image.picture}}" width="200" height="200"></a>
       {% endfor %}
     </section>
 </main>
