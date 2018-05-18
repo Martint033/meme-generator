@@ -1,11 +1,18 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
+<<<<<<< HEAD
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "843b04df5fdfe76251025001d66e0fd2",
+=======
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "hash": "8dd75dc82d98d4dc62a5f8ef6fe372af",
     "content-hash": "918d30a6ca81b9252b948893d8479f70",
+>>>>>>> 5b17657df5cc01ecb974f682cac7fc30bbfc7f01
     "packages": [
         {
             "name": "symfony/polyfill-mbstring",
@@ -64,7 +71,11 @@
                 "portable",
                 "shim"
             ],
+<<<<<<< HEAD
+            "time": "2018-04-26T10:06:28+00:00"
+=======
             "time": "2018-04-26 10:06:28"
+>>>>>>> 5b17657df5cc01ecb974f682cac7fc30bbfc7f01
         },
         {
             "name": "twig/twig",
@@ -130,7 +141,11 @@
             "keywords": [
                 "templating"
             ],
+<<<<<<< HEAD
+            "time": "2018-04-02T09:24:19+00:00"
+=======
             "time": "2018-04-02 09:24:19"
+>>>>>>> 5b17657df5cc01ecb974f682cac7fc30bbfc7f01
         }
     ],
     "packages-dev": [],

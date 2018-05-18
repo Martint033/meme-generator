@@ -2,7 +2,6 @@
     require("models/model.php");
 
     $posts = listImg();
-    
 
     require 'vendor/autoload.php';
 

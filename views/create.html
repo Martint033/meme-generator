@@ -1,16 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <form action="controllers/ctrlUpload.php" method="post" enctype="multipart/form-data">
-        Select image to upload:
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
-    </form>
-</body>
-</html>
+{% extends 'template.html' %}
+{% block content %}
+<main>
+    <section class="navigation">
+            <h1 class="titre darkgraytext">Create your meme</h1>
+            <a class="linkNav" href="#"><label for="file" class="btn">upload your image</label><input id="file" class="input-file" type="file"></a>
+            <p class="subTitle">or select one below</p>
+    </section>
+    <section class="hotMemes">
+            <div id="searchIn" >
+                <input type="text" class="searchbarIn" placeholder="Search">
+                <a class="searchButtonIn"><i class="darkgraytext fas fa-search"></i></a>
+            </div>
+            <form>
+                    <div class="multiselect">
+                      <div class="selectBox" id="select">
+                        <select>
+                          <option>Select an option</option>
+                        </select>
+                        <div class="overSelect"></div>
+                      </div>
+                      <div id="checkboxes">
+                      {% for categorie in categories %}
+                            <label for="{{categorie.tag}}">
+                            <input type="checkbox" id="one" />{{categorie.tag}}</label>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="submit-btn">
+                    <label class="btn submit-categories">search</label><button class="input-file" type="submit">Search</button>
+                    </div>
+                  </form>
+                  
+                  
+    </section>
+    <section class="allImages">
+      {% for image in images %}
+      <img class="createImage" src="{{ image.image }}" width="200" height="200">
+      {% endfor %}
+    </section>
+</main>
+{% endblock %}
