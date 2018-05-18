@@ -12,6 +12,8 @@ function listImg () {
 
 
 function addImg ($img, $title) {
-    $response = $GLOBALS['bdd']->prepare('INSERT INTO `image`(`title`, `image`) VALUES ('.$title.' , '.$img.')');
+    $response = $GLOBALS['bdd']->prepare('INSERT INTO `image`(`title`, `image`) VALUES (:title , :img)');
+    $response->bindParam(':title', $title);
+    $response->bindParam(':img', $img);
     $response->execute();
 }
