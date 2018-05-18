@@ -116,7 +116,7 @@ function selectedImg(){
 }
 
 
-function addImg ($nom, $url) {
+function addImg($nom, $url) {
     global $bdd;
     $response = $bdd->prepare('INSERT INTO `pictures`(`picture`, `newName`) VALUES (:chemin, :title)');
     $response->bindParam(':title', $nom);
