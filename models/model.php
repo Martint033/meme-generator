@@ -97,7 +97,7 @@ function getTags(){
 // }
 function listImg () {
     global $bdd;
-    $response = $bdd->prepare('SELECT id, title, `image`,`newName`  FROM image');
+    $response = $bdd->prepare('SELECT id_p, title_p, `picture`,`newName` FROM pictures');
     $response->execute();
     $allImages = $response->fetchAll(PDO::FETCH_ASSOC);
     return $allImages;
@@ -108,7 +108,7 @@ function listImg () {
 function selectedImg(){
     global $bdd;
     $newName = $_GET['id'];
-    $resultat = $bdd->prepare("SELECT `id`, `image` FROM `image` WHERE `id` = :selectedImg");
+    $resultat = $bdd->prepare("SELECT `id_p`, `picture` FROM `pictures` WHERE `id_p` = :selectedImg");
     $resultat->bindParam(':selectedImg', $newName, PDO::PARAM_INT);
     $resultat->execute();   
     $selectedImage = $resultat->fetch(PDO::FETCH_ASSOC);
@@ -116,10 +116,11 @@ function selectedImg(){
 }
 
 
-function addImg ($img, $title) {
+function addImg ($nom, $url) {
     global $bdd;
-    $response = $bdd->prepare('INSERT INTO `pictures`(`title_p`, `picture`) VALUES (:title , :url)');
-    $response->bindParam(':title', $title);
-    $response->bindParam(':url', $url);
+    $response = $bdd->prepare('INSERT INTO `pictures`(`picture`, `newName`) VALUES (:chemin, :title)');
+    $response->bindParam(':title', $nom);
+    $response->bindParam(':chemin', $url);
     $response->execute();
+    return $bdd->lastInsertId(); 
 }
