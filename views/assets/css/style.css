@@ -103,6 +103,14 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.errorBg{
+  background-image: url("../images/banniere.png");
+}
+
+.errorP{
+  color: red;
+}
+
 /* Media queries */
 
 @media (min-width: 500px) {

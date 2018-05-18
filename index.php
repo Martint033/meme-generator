@@ -1,39 +1,40 @@
 <?php
-<<<<<<< HEAD
 
-// //Rounting
+//Rounting
 
-// if (isset($_GET['action'])){
+if (isset($_GET['action'])){
     
-//     switch ($_GET['action']) { 
+    switch ($_GET['action']) { 
         
-//     //routeur
+    //routeur
 
-//     case 'browse':
-//     require_once('controllers/ctrlBrowse.php');
-//     break;
+    case 'browse':
+    require_once('controllers/ctrlBrowse.php');
+    break;
 
-//     case 'create':
-//     require_once('controllers/ctrlCreate.php');
+    case 'create':
+    require_once('controllers/ctrlCreate.php');
 
-//     break;
+    break;
 
-//     case 'homepage':
-//     require_once('controllers/real.php');
-//     break;
+    case 'homepage':
+    require_once('controllers/homepage.php');
+    break;
     
 
-//     default:
+    default:
 
-//     require_once('error.html');
+    require_once('error.html');
     
 
-//     }
-// } else {
-//     require_once('controllers/ctrlBrowse.php');
-// }
-=======
+    }
+} else {
+    require_once('controllers/ctrlBrowse.php');
+}
     include("controllers/ctrlHomepage.php");
->>>>>>> 5b17657df5cc01ecb974f682cac7fc30bbfc7f01
+    include("controllers/ctrlCreate.php");
+    include("controllers/ctrlBrowse.php");
 
 ?>
+
+<p>errorBg<p>

@@ -17,13 +17,13 @@ function getPictures(){
 //stNewPictureS
    
     global $dbo;
-    $stps = $dbo->prepare('SELECT * FROM pictures' );
+    $stps = $dbo->prepare('SELECT * FROM pictures');
     $stps->execute();
     var_dump($stps->fetchAll(PDO::FETCH_ASSOC));
 
     return $stps->fetchAll(PDO::FETCH_ASSOC);
 }
-// getPictures();
+getPictures();
 
 
 
@@ -82,14 +82,19 @@ function insertNewPicture(){
 
 
 
-function listImg () {
-    $response = $GLOBALS['bdd']->prepare('SELECT * FROM image');
-    $response->execute();
-    return $response->fetchAll(PDO::FETCH_ASSOC);
-}
+// function listImg () {
+    
+//     global $dbo;
+//     $response = $GLOBALS['bdd']->prepare('SELECT * FROM pictures');
+//     $response->execute();
+//     var_dump($response->fetchAll(PDO::FETCH_ASSOC));
+//     return $response->fetchAll(PDO::FETCH_ASSOC);
+// }
+// listImg();
 
-
-function addImg ($img, $title) {
-    $response = $GLOBALS['bdd']->prepare('INSERT INTO `image`(`title`, `image`) VALUES ('.$title.' , '.$img.')');
-    $response->execute();
-}
+// function addImg ($img, $title) {
+    
+//     global $dbo;
+//     $response = ->prepare('INSERT INTO `pictures`(`title_p`, `picture`) VALUES ('.$title.' , '.$img.')');
+//     $response->execute();
+// }
