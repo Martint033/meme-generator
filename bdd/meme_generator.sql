@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  ven. 18 mai 2018 à 10:27
--- Version du serveur :  10.1.31-MariaDB
--- Version de PHP :  7.2.4
+-- Généré le :  ven. 18 mai 2018 à 14:25
+-- Version du serveur :  10.1.30-MariaDB
+-- Version de PHP :  7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -99,22 +99,24 @@ CREATE TABLE `memes` (
 CREATE TABLE `pictures` (
   `id_p` int(11) NOT NULL,
   `title_p` varchar(50) NOT NULL,
-  `picture` varchar(225) NOT NULL
+  `picture` varchar(225) NOT NULL,
+  `newName` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `pictures`
 --
 
-INSERT INTO `pictures` (`id_p`, `title_p`, `picture`) VALUES
-(1, 'coffee', 'assets/medias/images/coffee.jpg'),
-(2, 'sheep', 'assets/medias//images/sheep.jpg'),
-(3, 'alcohol', 'assets/medias/images/alcohol.jpg'),
-(4, 'apple', 'assets/medias/images/apple.jpg'),
-(5, 'balance', 'assets/medias/images/balance.jpg'),
-(6, 'doge', 'assets/medias/images/doge.jpg'),
-(7, 'flip', 'assets/medias/images/flip.jpg'),
-(8, 'rangutan', 'assets/medias/images/rangutan.jpg');
+INSERT INTO `pictures` (`id_p`, `title_p`, `picture`, `newName`) VALUES
+(1, 'coffee', 'assets/medias/images/coffee.jpg', 'coffee123459'),
+(2, 'sheep', 'assets/medias//images/sheep.jpg', 'sheep123459'),
+(3, 'alcohol', 'assets/medias/images/alcohol.jpg', 'alcohol123459'),
+(4, 'apple', 'assets/medias/images/apple.jpg', 'apple123459'),
+(5, 'balance', 'assets/medias/images/balance.jpg', 'balance123459'),
+(6, 'doge', 'assets/medias/images/doge.jpg', 'doge123459'),
+(7, 'flip', 'assets/medias/images/flip.jpg', 'flip123459'),
+(8, 'rangutan', 'assets/medias/images/rangutan.jpg', 'rangutan123459'),
+(9, '', 'assets/medias/images/ab07302cce47eeed8e97de191180f784.png', 'ab07302cce47eeed8e97de191180f784');
 
 -- --------------------------------------------------------
 
@@ -173,7 +175,7 @@ ALTER TABLE `tag`
 -- AUTO_INCREMENT pour la table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
