@@ -3,7 +3,13 @@
 <main>
     <section class="navigation">
             <h1 class="titre darkgraytext">Create your meme</h1>
-            <a class="linkNav" href="#"><label for="file" class="btn">upload your image</label><input id="file" class="input-file" type="file"></a>
+            
+                <form action="upload" method="post" enctype="multipart/form-data">
+                    <a class="linkNav" ><label for="fileToUpload" class="btn">upload your image</label>
+                    <input name="fileToUpload" id="fileToUpload" class="input-file" type="file"></a>
+                    <input type="submit" value="Validate" name="submit">
+                </form>
+            
             <p class="subTitle">or select one below</p>
     </section>
     <section class="hotMemes">

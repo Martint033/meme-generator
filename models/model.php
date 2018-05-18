@@ -105,10 +105,10 @@ function listImg () {
 }
 
 
-function addImg ($img, $title) {
+function addImg ($title, $url) {
     global $bdd;
-    $response = $bdd->prepare('INSERT INTO `image`(`title`, `image`) VALUES (:title , :img)');
+    $response = $bdd->prepare('INSERT INTO `pictures`(`title_p`, `picture`) VALUES (:title , :url)');
     $response->bindParam(':title', $title);
-    $response->bindParam(':img', $img);
+    $response->bindParam(':url', $url);
     $response->execute();
 }

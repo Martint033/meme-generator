@@ -1,9 +1,12 @@
 <?php
     
-    $target_dir = "assets/media/";
+    $target_dir = "assets/medias/images/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    $nom = md5(uniqid(rand(), true));
+    $target_file = $nom.".".$imageFileType;
+
 
     // Check if image file is a actual image or fake image
     if(isset($_POST["submit"])) {
@@ -44,8 +47,9 @@
 
     require("models/model.php");
 
-    $title = "ca marche";
-    addImg($target_file, $title);
+    
+    $url = "$target_dir$target_file";
+    addImg($nom, $url);
 
 
 ?>
