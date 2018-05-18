@@ -206,3 +206,9 @@ nav {
 }
 
 @media (min-width: 1200px) {  }
+
+
+#meme-canvas {
+  width: 300px;
+  height: 300px;
+}

@@ -3,7 +3,7 @@
 require_once("utils/db.php");
 
 function hotMemes(){
-    
+
 }
 // function insertNewMeme(){
 //     //stNewMeme
@@ -62,8 +62,13 @@ function selectedImg(){
     return $selectedImage;
 }
 
+<<<<<<< HEAD
 // ajouter une image
 function addImg ($title, $nom, $url) {
+=======
+
+function addImg($nom, $url) {
+>>>>>>> a8f41d8db0923b60cec37483f6612353c1d29b1a
     global $bdd;
     $response = $bdd->prepare('INSERT INTO `pictures`(title_p, `picture`, `newName`) VALUES (:title,:chemin, :nom)');
     $response->bindParam(':nom', $nom);
