@@ -1,0 +1,181 @@
+.darkgrayBG{
+  background-color: #444242;
+}
+
+.darkgraytext{
+  color: #444242;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+.titre{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.createImage{
+  width: 100px;
+  height:100px;
+}
+nav {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}   
+
+.logo{
+    width: 90px;
+    vertical-align: auto;
+}
+
+.wen{
+  color: white;
+  padding: 4px;
+}
+
+.searchbar{
+  height: 25px;
+  width: 130px;
+  padding-left: 5px;
+  border: none;
+}
+
+.navigation{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:10px;
+  margin-bottom: 30px;
+}
+
+.btn{
+  border-image: linear-gradient(to right,#EC196E, #8267A8, #26AADA)1/ 2px;
+  padding: 9px; 
+  margin: 17px 0 0 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.linkNav{
+  text-decoration: none;
+  color:#444242;
+  width:50%;
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height: 80px;
+  width:100%;
+  color: white;
+  font-size: 10px;
+
+}
+
+
+.searchbarIn{
+  height: 35px;
+  width: 220px;
+}
+
+.multiselect {
+  width: 260px;
+}
+
+.selectBox {
+  position: relative;
+  width: 260px;
+  margin: auto;
+  height: 38px;
+
+}
+
+.selectBox select {
+  width: 100%;
+  height: 100%;
+}
+
+.submit-btn{
+  margin-top: 20px;
+}
+
+.overSelect {
+  position: absolute;
+  height: 40px;
+  margin: auto;
+
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+
+}
+
+#checkboxes label {
+  display: block;
+ 
+}
+
+#checkboxes label:hover {
+  background-color: #25a5c4;
+}
+
+.btn:hover {
+    color: #25a5c4;
+}
+
+/* // et on masque le input */
+.input-file {
+  display: none;
+}
+
+.submit-categories{
+  margin: 20px;
+}
+
+.allImages{
+  margin-top: 20px;
+}
+@media (min-width: 992px) { 
+.navigation{
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn{
+  margin: 17px 20px 0 20px;
+}
+nav {
+  justify-content: space-between;
+  height: 90px;
+}   
+
+.logo{
+  margin-left:60px;
+  width: 115px;
+
+}
+.fas{
+  margin-right: 60px;
+}
+.searchbar{
+  width: 330px;
+}
+.linkNav{
+    width:20%;
+  }
+}
+
+
+@media (min-width: 1200px) {  }

@@ -2,8 +2,8 @@
     require("models/model.php");
 
     $posts = listImg();
+    $tags = getTags();
     
-
     require 'vendor/autoload.php';
 
     $loader = new Twig_Loader_Filesystem('views');
@@ -12,4 +12,5 @@
     ));
 
     $template = $twig->load('create.html');
-    echo $template->render (array('imgBase'=>$posts));
+    echo $template->render(array('images'=>$posts,'categories'=>$tags));
+
