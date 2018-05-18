@@ -116,6 +116,15 @@ footer{
 
 }
 
+.errorBg{
+  background-image: url("../images/banniere.png");
+}
+
+.errorP{
+  color: red;
+}
+
+/* Media queries */
 #checkboxes {
   display: none;
   border: 1px #dadada solid;
@@ -176,5 +185,9 @@ nav {
     width:20%;
   }
 }
+<<<<<<< HEAD:views/assets/css/style.css
+=======
+
+>>>>>>> 4d8702950bd81147b1fecea63e425e76df78501d:assets/css/style.css
 
 @media (min-width: 1200px) {  }
