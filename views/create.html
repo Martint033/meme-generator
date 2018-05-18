@@ -41,7 +41,7 @@
     </section>
     <section class="allImages">
       {% for image in images %}
-      <a href="edit-meme/{{image.newName}}&{{image.id}}"><img class="createImage" src="{{ image.image }}" width="200" height="200"></a>
+      <a href="edit-meme/{{image.newName}}&{{image.id_p}}"><img class="createImage" src="{{image.picture}}" width="200" height="200"></a>
       {% endfor %}
     </section>
 </main>
