@@ -1,6 +1,9 @@
 var expanded = false;
+var select = document.getElementById("select");
+console.log(select);
 
-function showCheckboxes() {
+
+select.addEventListener('click', function() {
   var checkboxes = document.getElementById("checkboxes");
   if (!expanded) {
     checkboxes.style.display = "block";
@@ -9,4 +12,4 @@ function showCheckboxes() {
     checkboxes.style.display = "none";
     expanded = false;
   }
-}
+})

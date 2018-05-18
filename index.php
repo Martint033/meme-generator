@@ -54,6 +54,9 @@ switch($path){
     case "/meme-generator/browse":
         require('controllers/ctrlBrowse.php');
         break;
+    case "/meme-generator/browse/meme":
+        require('controllers/ctrldownload.php');
+        break;
 
 }
     // case "/filmorama/genre":

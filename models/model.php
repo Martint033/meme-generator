@@ -1,5 +1,5 @@
 <?php 
-// ce model contient toutes les requêtes 
+
 require_once("utils/db.php");
 
 
@@ -8,11 +8,10 @@ function getPictures(){
 //stNewPictureS
    
     global $dbo;
-    $stps = $dbo->prepare('SELECT * FROM pictures' );
+    $stps = $dbo->prepare('SELECT * FROM pictures');
     $stps->execute();
-    var_dump($stps->fetchAll(PDO::FETCH_ASSOC));
-
-    return $stps->fetchAll(PDO::FETCH_ASSOC);
+    $result = $stps->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
 }
 // getPictures();
 
@@ -71,12 +70,22 @@ function insertNewPicture(){
 // }
 // getMemeTag();
 
-
+function getTags(){
+    global $bdd;
+    $response = $bdd->prepare('SELECT tag FROM tag');
+    $response->execute();
+    $allTags = $response->fetchAll(PDO::FETCH_ASSOC);
+    return $allTags;
+    $response->closeCursor();
+}
 
 function listImg () {
-    $response = $GLOBALS['bdd']->prepare('SELECT * FROM image');
+    global $bdd;
+    $response = $bdd->prepare('SELECT * FROM image');
     $response->execute();
-    return $response->fetchAll(PDO::FETCH_ASSOC);
+    $allImages = $response->fetchAll(PDO::FETCH_ASSOC);
+    return $allImages;
+    $response->closeCursor();
 }
 
 
