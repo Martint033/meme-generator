@@ -45,8 +45,12 @@ $target_file = $nom.".".$imageFileType;
     }
 
 require("models/model.php");
-
+$title = $_POST['title'];
 $url = $target_dir.'/'.$target_file;
-$idImg = addImg($nom, $url);
+$idImg = addImg($title,$nom, $url);
+
+
+
+
   
 header('Location: /meme-generator/edit-meme/'.$nom."&".$idImg); 
