@@ -1,12 +1,11 @@
 <?php
 
-    $target_dir = "assets/medias/images";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    $nom = md5(uniqid(rand(), true));
-    $target_file = "$target_dir$nom".".".$imageFileType;
-
+$target_dir = "assets/medias/images";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$nom = md5(uniqid(rand(), true));
+$target_file = $nom.".".$imageFileType;
 
     // Check if image file is a actual image or fake image
     if(isset($_POST["submit"])) {
@@ -45,13 +44,9 @@
        
     }
 
-    require("models/model.php");
+require("models/model.php");
 
-    
-    $url = $target_dir.'/'.$target_file;
- $idImg = addImg($nom, $url);
-   
-
-
-
+$url = $target_dir.'/'.$target_file;
+$idImg = addImg($nom, $url);
+  
 header('Location: /meme-generator/edit-meme/'.$nom."&".$idImg); 
