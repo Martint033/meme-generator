@@ -3,7 +3,19 @@
 require_once("utils/db.php");
 
 function hotMemes(){
+    global $bdd;
+    $response = $bdd->prepare('SELECT id_m, title_m, meme, date_m FROM memes WHERE date_m <= CURRENT_TIMESTAMP() ORDER BY date_m DESC LIMIT 8');
+    $response->execute();
+    return $response->fetchAll(PDO::FETCH_ASSOC); 
+}
 
+function addMeme(){
+    global $bdd;
+    $response = $bdd->prepare("INSERT INTO memes(`title_m`,`meme`,`date_m`) VALUES (:title, :memeURL, CURRENT_TIMESTAMP)");
+    $response->bindParam(":title",$title);
+    $response->bindParam(":memeURL",$memeURL);
+    $response->execute();
+    return $response->fetchAll(PDO::FETCH_ASSOC); 
 }
 // function insertNewMeme(){
 //     //stNewMeme
