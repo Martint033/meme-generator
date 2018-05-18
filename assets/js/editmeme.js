@@ -6,10 +6,11 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize) {
     // Size canvas to image
     canvas.width = img.width;
     canvas.height = img.height;
+    
 
-    // Clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // Draw main image
+    // // Clear canvas
+    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // // Draw main image
     ctx.drawImage(img, 0, 0);
 
     // Text style: white with black borders
@@ -18,7 +19,7 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize) {
     ctx.textAlign = 'center';
 
     // Top text font size
-    fontSize = canvas.width * topTextSize;
+    fontSize = canvas.width * topTextSize/2;
     ctx.font = fontSize + 'px Impact';
     ctx.lineWidth = fontSize / 20;
 
@@ -30,7 +31,7 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize) {
     });
 
     // Bottom text font size
-    fontSize = canvas.width * bottomTextSize;
+    fontSize = canvas.width * bottomTextSize/2;
     ctx.font = fontSize + 'px Impact';
     ctx.lineWidth = fontSize / 20;
 
@@ -51,7 +52,10 @@ function init () {
     imageInput = document.getElementById('image-input');
     generateBtn = document.getElementById('generate-btn');
     canvas = document.getElementById('meme-canvas');
-    
+    var img = new Image();
+    img.src = imageInput.src;
+    // img.width = imageInput.width;
+    // img.height = imageInput.height;
     ctx = canvas.getContext('2d');
 
     canvas.width = canvas.height = 0;
@@ -61,39 +65,54 @@ function init () {
 
     // Generate button click listener
     generateBtn.addEventListener('click', function () {
-        // Read image as DataURL using the FileReader API
-        let reader = new FileReader();
-        reader.onload = function () {
-            let img = new Image;
-            img.src = reader.result;
-            generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);
-        };
-        reader.readAsDataURL(imageInput.files[0]);
+        
+            generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);   
     });
 
     topTextInput.addEventListener('input', function () {
-        // Read image as DataURL using the FileReader API
-        let reader = new FileReader();
-        reader.onload = function () {
-            let img = new Image;
-            img.src = reader.result;
-            generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);
-        };
-        reader.readAsDataURL(imageInput.files[0]);
+
+            generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);   
     });
 
     bottomTextInput.addEventListener('input', function () {
-        // Read image as DataURL using the FileReader API
-        let reader = new FileReader();
-        reader.onload = function () {
-            let img = new Image;
-            img.src = reader.result;
-            generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);
-        };
-        reader.readAsDataURL(imageInput.files[0]);
+     
+        generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);
     });
 }
 
 init();
 
+function doCanvas() {
+    /* draw something */
+    ctx.fillStyle = '#f90';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#fff';
+    ctx.font = '60px sans-serif';
+    ctx.fillText('Code Project', 10, canvas.height / 2 - 15);
+    ctx.font = '26px sans-serif';
+    ctx.fillText('Click link below to save this as image', 15, canvas.height / 2 + 35);
+}
+
+/**
+ * This is the function that will take care of image extracting and
+ * setting proper filename for the download.
+ * IMPORTANT: Call it from within a onclick event.
+*/
+function downloadCanvas(link, canvasId, filename) {
+    link.href = document.getElementById(canvasId).toDataURL();
+    link.download = filename;
+}
+
+/** 
+ * The event handler for the link's onclick event. We give THIS as a
+ * parameter (=the link element), ID of the canvas and a filename.
+*/
+document.getElementById('download').addEventListener('click', function() {
+    downloadCanvas(this, 'meme-canvas', 'test.jpg');
+}, false);
+
+/**
+ * Draw something to canvas
+ */
+doCanvas();
 

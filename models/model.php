@@ -2,48 +2,9 @@
 
 require_once("utils/db.php");
 
+function hotMemes(){
 
-
-function getPictures(){
-//stNewPictureS
-   
-    global $bdd;
-    $stps = $bdd->prepare('SELECT * FROM pictures');
-    $stps->execute();
-    $result = $stps->fetchAll(PDO::FETCH_ASSOC);
-    return $result;
 }
-getPictures();
-
-
-
-function getMemes(){
-    //stMemeS
-
-    global $bdd;
-    $stms = $bdd->prepare('SELECT title_m, meme, date_m FROM memes');
-    $stms->execute();
-    var_dump($stms->fetchAll(PDO::FETCH_ASSOC));
-
-    return $stms->fetchAll(PDO::FETCH_ASSOC);
-}
-// getMemes();
-
-    
-
-// function insertNewPicture(){
-// //stNewPicture
-
-//     global $bdd;
-//     $stnp = $bdd->prepare('INSERT INTO `pictures`(`title_p`, `picture`) VALUES (`title`, `pic`)');
-//     // $stnp->bindParam(':id_picture', $id_picture);
-//     $stnp->execute();
-//     var_dump($stnp->fetchAll(PDO::FETCH_ASSOC));
-
-//     return $stnp->fetchAll(PDO::FETCH_ASSOC);
-// }
-// insertNewPicture();
-
 // function insertNewMeme(){
 //     //stNewMeme
     
@@ -68,8 +29,9 @@ function getMemes(){
 //     return ($stnm->fetch(PDO::FETCH_ASSOC));
 
 // }
-// getMemeTag();
 
+
+// obtenir les catégories
 function getTags(){
     global $bdd;
     $response = $bdd->prepare('SELECT tag FROM tag');
@@ -79,22 +41,7 @@ function getTags(){
     $response->closeCursor();
 }
 
-// function listImg () {
-    
-//     global $dbo;
-//     $response = $GLOBALS['bdd']->prepare('SELECT * FROM pictures');
-//     $response->execute();
-//     var_dump($response->fetchAll(PDO::FETCH_ASSOC));
-//     return $response->fetchAll(PDO::FETCH_ASSOC);
-// }
-// listImg();
-
-// function addImg ($img, $title) {
-    
-//     global $dbo;
-//     $response = ->prepare('INSERT INTO `pictures`(`title_p`, `picture`) VALUES ('.$title.' , '.$img.')');
-//     $response->execute();
-// }
+// afficher toutes les images 
 function listImg () {
     global $bdd;
     $response = $bdd->prepare('SELECT id_p, title_p, `picture`,`newName` FROM pictures');
@@ -104,7 +51,7 @@ function listImg () {
     $response->closeCursor();
 }
 
-
+// afficher une seule image sélectionnée
 function selectedImg(){
     global $bdd;
     $newName = $_GET['id'];
@@ -115,12 +62,13 @@ function selectedImg(){
     return $selectedImage;
 }
 
-
-function addImg ($nom, $url) {
+// ajouter une image
+function addImg ($title, $nom, $url) {
     global $bdd;
-    $response = $bdd->prepare('INSERT INTO `pictures`(`picture`, `newName`) VALUES (:chemin, :title)');
-    $response->bindParam(':title', $nom);
+    $response = $bdd->prepare('INSERT INTO `pictures`(title_p, `picture`, `newName`) VALUES (:title,:chemin, :nom)');
+    $response->bindParam(':nom', $nom);
     $response->bindParam(':chemin', $url);
+    $response->bindParam(':title',$title);
     $response->execute();
     return $bdd->lastInsertId(); 
 }
