@@ -11,7 +11,8 @@ switch($path){
     case "/meme-generator/" :
         require('controllers/ctrlHomepage.php');
         break;
-
+        break;
+        break;
     case "/meme-generator/create":
         require('controllers/ctrlCreate.php');
         break;
@@ -26,5 +27,9 @@ switch($path){
 
     case "/meme-generator/upload":
         require('controllers/ctrlUpload.php');
+        break;
+
+    case "/meme-generator/edit-meme":
+        require('controllers/ctrlEditMeme.php');
         break;
 }
