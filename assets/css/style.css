@@ -46,6 +46,7 @@ nav {
   border: none;
 }
 
+
 .navigation{
   display: flex;
   flex-direction: column;
@@ -55,6 +56,7 @@ nav {
 }
 
 .btn{
+  background-color: #E7F5F6;
   border-image: linear-gradient(to right,#EC196E, #8267A8, #26AADA)1/ 2px;
   padding: 9px; 
   margin: 17px 0 0 0;
@@ -157,9 +159,22 @@ footer{
   margin-top: 20px;
 }
 @media (min-width: 992px) { 
+  
 .navigation{
   flex-direction: row;
   justify-content: center;
+}
+
+.memeBg{
+  padding: 60px;
+  background-image: url("../medias/background/background.png");
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+  /* background-repeat: no-repeat; */
 }
 
 .btn{
@@ -185,9 +200,5 @@ nav {
     width:20%;
   }
 }
-<<<<<<< HEAD:views/assets/css/style.css
-=======
-
->>>>>>> 4d8702950bd81147b1fecea63e425e76df78501d:assets/css/style.css
 
 @media (min-width: 1200px) {  }
