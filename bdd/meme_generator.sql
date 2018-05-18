@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 16 mai 2018 à 15:16
+-- Généré le :  ven. 18 mai 2018 à 10:27
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.4
 
@@ -107,14 +107,14 @@ CREATE TABLE `pictures` (
 --
 
 INSERT INTO `pictures` (`id_p`, `title_p`, `picture`) VALUES
-(1, 'coffee', 'http://localhost/meme-generator/assets/images/medias/jpg/coffee.jpg'),
-(2, 'sheep', 'http://localhost/meme-generator/assets/images/medias/jpg/sheep.jpg'),
-(3, 'alcohol', 'http://localhost/meme-generator/assets/images/medias/jpg/alcohol_art.jpg'),
-(4, 'apple', 'http://localhost/meme-generator/assets/images/medias/jpg/apple_artwork.jpg'),
-(5, 'balance', 'http://localhost/meme-generator/assets/images/medias/jpg/balance_zen.jpg'),
-(6, 'doge', 'http://localhost/meme-generator/assets/images/medias/jpg/doge.jpg'),
-(7, 'flip', 'http://localhost/meme-generator/assets/images/medias/jpg/flipTable.jpg'),
-(8, 'rangutan', 'http://localhost/meme-generator/assets/images/medias/jpg/rangutan.jpg');
+(1, 'coffee', 'assets/medias/images/coffee.jpg'),
+(2, 'sheep', 'assets/medias//images/sheep.jpg'),
+(3, 'alcohol', 'assets/medias/images/alcohol.jpg'),
+(4, 'apple', 'assets/medias/images/apple.jpg'),
+(5, 'balance', 'assets/medias/images/balance.jpg'),
+(6, 'doge', 'assets/medias/images/doge.jpg'),
+(7, 'flip', 'assets/medias/images/flip.jpg'),
+(8, 'rangutan', 'assets/medias/images/rangutan.jpg');
 
 -- --------------------------------------------------------
 
@@ -173,7 +173,7 @@ ALTER TABLE `tag`
 -- AUTO_INCREMENT pour la table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
