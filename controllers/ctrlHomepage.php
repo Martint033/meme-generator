@@ -1,8 +1,7 @@
 <?php 
     require("models/model.php");
 
-    $posts = getPictures();
-    
+    $posts = listImg();
 
     require_once 'vendor/autoload.php';
 

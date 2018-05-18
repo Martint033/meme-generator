@@ -1,15 +1,6 @@
 <?php 
-// ce model contient toutes les requêtes 
-// require_once("utils/db.php");
 
-try {
-
-$dbo = new PDO('mysql:host=localhost;dbname=meme_generator', 'root', '');
-}
-
-catch(PDOException $e){
-    echo'Problem during connection' . $e->getMessage();
-}
+require_once("utils/db.php");
 
 
 
@@ -19,9 +10,8 @@ function getPictures(){
     global $dbo;
     $stps = $dbo->prepare('SELECT * FROM pictures');
     $stps->execute();
-    var_dump($stps->fetchAll(PDO::FETCH_ASSOC));
-
-    return $stps->fetchAll(PDO::FETCH_ASSOC);
+    $result = $stps->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
 }
 getPictures();
 
@@ -80,7 +70,14 @@ function insertNewPicture(){
 // }
 // getMemeTag();
 
-
+function getTags(){
+    global $bdd;
+    $response = $bdd->prepare('SELECT tag FROM tag');
+    $response->execute();
+    $allTags = $response->fetchAll(PDO::FETCH_ASSOC);
+    return $allTags;
+    $response->closeCursor();
+}
 
 // function listImg () {
     
@@ -98,3 +95,19 @@ function insertNewPicture(){
 //     $response = ->prepare('INSERT INTO `pictures`(`title_p`, `picture`) VALUES ('.$title.' , '.$img.')');
 //     $response->execute();
 // }
+function listImg () {
+    global $bdd;
+    $response = $bdd->prepare('SELECT * FROM image');
+    $response->execute();
+    $allImages = $response->fetchAll(PDO::FETCH_ASSOC);
+    return $allImages;
+    $response->closeCursor();
+}
+
+
+function addImg ($img, $title) {
+    $response = $GLOBALS['bdd']->prepare('INSERT INTO `image`(`title`, `image`) VALUES (:title , :img)');
+    $response->bindParam(':title', $title);
+    $response->bindParam(':img', $img);
+    $response->execute();
+}

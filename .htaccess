@@ -1,0 +1,5 @@
+RewriteEngine On   
+RewriteRule ^homepage$ index.php [L,QSA]
+RewriteRule ^create$ index.php [L,QSA]
+RewriteRule ^browse$ index.php [L,QSA]
+RewriteRule ^browse/(meme/)([0-9]+)$ index.php?action=$1&id=$2 [L,QSA]

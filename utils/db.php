@@ -1,6 +1,6 @@
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=meme-generator;charset=utf8', 'adnane', 'piccolo333');
+    $bdd = new PDO('mysql:host=localhost;dbname=meme_generator;charset=utf8', 'root', '');
 }
 catch(Exception $e) {
     die('Erreur:'.$e->getMessage());

@@ -3,21 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <base href="http://localhost/meme-generator/index.php">
-    <title>Meme-Generator - Home page </title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="views/assets/images/m-paint.png" /> 
+    <link rel="stylesheet" href="views/assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <title>Meme-Generetor : Homepage</title>
+    
 </head>
 <body>
-    <header>
-
-    </header>
-    <main>
+    <nav class="darkgrayBG">
+        <a href="homepage"><img class="logo" src="views/assets/images/m-paint.png" alt="logo"></a>
+        <div id="search" >
+            <input type="text" class="searchbar" placeholder="Search">
+            <a class="searchButton"><i class="wen fas fa-search"></i></a>
+        </div>
+    </nav>
     {% block content %}
-    {% endblock %}
-    </main>
-    <footer>
-    
-    </footer>
-</body>
 
-</html>
+
+    {% endblock %}
+    <footer class="darkgrayBG">
+        <p class="footer">© MEME-GENERATOR - all right reserved</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="views/assets/js/script.js"></script>
+</body>
+</html>    
+    
+  

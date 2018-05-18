@@ -1,6 +1,6 @@
 <?php
     
-    $target_dir = "../views/assets/";
+    $target_dir = "assets/media/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -34,7 +34,7 @@
     } 
     else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            echo "<p>The file has been upload at ". $target_file." . . . :)</p>";
+            echo "<p>The file has been upload at ". $target_file ." . . . :)</p>";
         } 
         else {
             echo "Sorry, there was an error uploading your file.";
@@ -42,10 +42,10 @@
        
     }
 
-    require("../models/model.php");
-    $img ="genial";
+    require("models/model.php");
+
     $title = "ca marche";
-    addImg($img, $title);
+    addImg($target_file, $title);
 
 
 ?>
