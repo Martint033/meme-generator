@@ -14,5 +14,5 @@
     $template = $twig->load('create.html');
     echo $template->render(array('images'=>$posts,'categories'=>$tags));
 
-    var_dump($posts);
+
 

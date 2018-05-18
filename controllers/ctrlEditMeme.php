@@ -13,4 +13,3 @@
     $template = $twig->load('edit-meme.html');
     echo $template->render (array('selection'=>$selectedImg));
 
-    var_dump($selectedImg);
