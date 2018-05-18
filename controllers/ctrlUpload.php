@@ -5,7 +5,7 @@
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     $nom = md5(uniqid(rand(), true));
-    $target_file = $nom.".".$imageFileType;
+    $target_file = "$target_dir$nom".".".$imageFileType;
 
 
     // Check if image file is a actual image or fake image
@@ -48,7 +48,7 @@
     require("models/model.php");
 
     
-    $url = "$target_dir$target_file";
+    $url = $target_file;
     addImg($nom, $url);
 
 
