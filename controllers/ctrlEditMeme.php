@@ -2,7 +2,8 @@
     require("models/model.php");
 
     $selectedImg = selectedImg();
-
+    $similarMemes = getsimilarMemes();
+ 
     require_once 'vendor/autoload.php';
 
     $loader = new Twig_Loader_Filesystem('views');
@@ -11,5 +12,7 @@
     ));
 
     $template = $twig->load('edit-meme.html');
-    echo $template->render (array('selection'=>$selectedImg));
+    echo $template->render (array('selection'=>$selectedImg, 'similarMemes'=>$similarMemes));
+    
 
+    var_dump($selectedImg['id_p']);
