@@ -7,24 +7,33 @@
 
 <h2>Create your meme</h2>
 <p>To create your meme, type your top and bottom text, choose the size of both texts, select a font and a color... and the meme is all yours </p>
-<img id="image-input" src="{{selection.picture}}" width="100" height="100">
+<img id="image-input" src="{{selection.picture}}" style="display: none;" width="100" height="100">
 
 <form action="upload-meme" method="post">
     <input type="submit" value="Save" >
 <p>
     <textarea id="top-text"></textarea>
-    Text size: <input type="range" id="top-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
+    Text size: <input type="range" id="top-text-size-input" class="updateChange" min="0.05" max="0.25" value="0.15" step="0.01">
 </p>
 <p>
     <textarea id="bottom-text"></textarea>
-    Text size: <input type="range" id="bottom-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
+    Text size: <input type="range" id="bottom-text-size-input" class="updateChange" min="0.05" max="0.25" value="0.15" step="0.01">
 </p>
+<form>
+    <input type="color" id="txtColor">
+
+    <select id="fontStyle" class="updateChange">
+        <option value="default">Choose font</option>
+        <option value="Arial">Arial</option>
+        <option value="Helvetica">Helvetica</option>
+        <option value="Times">Times</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Impact">Impact</option>
+    </select>
+</form>
 
 <p>
-    <button id="generate-btn">Generate!</button>
-</p>
-<p>
-    <canvas id="meme-canvas" title="Right click -> &quot;Save image as...&quot;"></canvas>
+    <canvas id="meme-canvas" src="{{selection.picture}}" title="Right click -> &quot;Save image as...&quot;"></canvas>
 </p>
 
 <a id="download">Download as image</a>

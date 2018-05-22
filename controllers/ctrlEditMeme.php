@@ -15,4 +15,3 @@
     echo $template->render (array('selection'=>$selectedImg, 'similarMemes'=>$similarMemes));
     
 
-    var_dump($selectedImg['id_p']);
