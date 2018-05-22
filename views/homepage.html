@@ -9,6 +9,9 @@
     </section>
     <section class="hotMemes">
         <h1 class="titre darkgraytext">Hot Memes</h1>
+        {% for hotMemes in allhotMemes %}
+        <img src="{{hotMemes.meme}}"width="100" height="100">
+        {% endfor %}
     </section>
 </main>
 {% endblock %}  

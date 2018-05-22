@@ -3,22 +3,41 @@
 require_once("utils/db.php");
 
 function hotMemes(){
-
+    global $bdd;
+    $response = $bdd->prepare('SELECT id_m, title_m, meme, date_m FROM memes WHERE date_m <= CURRENT_TIMESTAMP() ORDER BY date_m DESC LIMIT 8');
+    $response->execute();
+    return $response->fetchAll(PDO::FETCH_ASSOC); 
 }
-// function insertNewMeme(){
-//     //stNewMeme
-    
-//     global $bdd;
-//     $stnm = $bdd->prepare('INSERT INTO `memes`(`title_m`, `meme`) VALUES (`title`, `mem`)'
-//     $stnm->execute();
-//     var_dump($stnm->fetchAll(PDO::FETCH_ASSOC));
-    
-//     return $stnm->fetchAll(PDO::FETCH_ASSOC));
-    
-// }
-// insertNewMeme();
-    
 
+function addMeme($title,$memeURL,$newName_m){
+    global $bdd;
+    $id_picture = $_GET['id'];
+    $response = $bdd->prepare("INSERT INTO memes(`title_m`,`meme`, newName_m, `date_m`, id_picture) VALUES (:title, :memeURL,:newName_m, CURRENT_TIMESTAMP, :id_picture)");
+    $response->bindParam(":title",$title);
+    $response->bindParam(":memeURL",$memeURL);
+    $response->bindParam(":newName_m",$newName_m);
+    $response->bindParam(":id_picture",$id_picture);
+    $response->execute();
+    return $response->fetchAll(PDO::FETCH_ASSOC); 
+}
+
+
+function getallMemes(){
+    global $bdd;
+    $response = $bdd->prepare("SELECT id_m, title_m, meme FROM memes");
+    $response->execute();
+    return $response->fetchAll(PDO::FETCH_ASSOC);
+}    
+
+if (isset($_GET['id'])){
+function getsimilarMemes(){
+    global $bdd;
+    $response = $bdd->prepare("SELECT id_picture ,meme FROM memes WHERE id_picture = :id_p");
+    $response->bindParam(":id_p", $_GET['id']);
+    $response->execute();
+    return $response->fetchAll(PDO::FETCH_ASSOC);
+}
+}
 // function getMemeTag(){
     
 //     global $bdd;

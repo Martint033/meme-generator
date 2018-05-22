@@ -1,5 +1,9 @@
 {% extends 'template.html' %}
 
 {% block content %}
+<h2>All the memes</h2>
+{% for meme in memes %}
+<img src="{{ meme.meme }}" alt="" width="150" height="150">
 
+{% endfor %}
 {% endblock %}

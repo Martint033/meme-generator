@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  ven. 18 mai 2018 à 14:25
+-- Généré le :  lun. 21 mai 2018 à 21:30
 -- Version du serveur :  10.1.30-MariaDB
 -- Version de PHP :  7.2.2
 
@@ -21,17 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `meme_generator`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `link_img_meme`
---
-
-CREATE TABLE `link_img_meme` (
-  `id_image` int(255) NOT NULL,
-  `id_meme` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -85,10 +74,20 @@ CREATE TABLE `link_meme_tag` (
 
 CREATE TABLE `memes` (
   `id_m` int(11) NOT NULL,
-  `title_m` varchar(255) NOT NULL,
-  `meme` varchar(255) NOT NULL,
-  `date_m` datetime NOT NULL
+  `title_m` varchar(255) DEFAULT NULL,
+  `meme` varchar(255) DEFAULT NULL,
+  `newName_m` varchar(255) DEFAULT NULL,
+  `date_m` timestamp NULL DEFAULT NULL,
+  `id_picture` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `memes`
+--
+
+INSERT INTO `memes` (`id_m`, `title_m`, `meme`, `newName_m`, `date_m`, `id_picture`) VALUES
+(1, 'meme1', 'assets/medias/images/53ea2c3791b06abb36e4f7b3efe2f6bc.jpg', NULL, '2018-05-18 14:17:51', 16),
+(2, 'coucou', 'pouet', 'pouetrandom', '2018-05-21 19:06:00', 14);
 
 -- --------------------------------------------------------
 
@@ -98,9 +97,9 @@ CREATE TABLE `memes` (
 
 CREATE TABLE `pictures` (
   `id_p` int(11) NOT NULL,
-  `title_p` varchar(50) NOT NULL,
-  `picture` varchar(225) NOT NULL,
-  `newName` varchar(255) NOT NULL
+  `title_p` varchar(50) DEFAULT NULL,
+  `picture` varchar(225) DEFAULT NULL,
+  `newName` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -109,14 +108,18 @@ CREATE TABLE `pictures` (
 
 INSERT INTO `pictures` (`id_p`, `title_p`, `picture`, `newName`) VALUES
 (1, 'coffee', 'assets/medias/images/coffee.jpg', 'coffee123459'),
-(2, 'sheep', 'assets/medias//images/sheep.jpg', 'sheep123459'),
+(2, 'sheep', 'assets/medias/images/sheep.jpg', 'sheep123459'),
 (3, 'alcohol', 'assets/medias/images/alcohol.jpg', 'alcohol123459'),
 (4, 'apple', 'assets/medias/images/apple.jpg', 'apple123459'),
 (5, 'balance', 'assets/medias/images/balance.jpg', 'balance123459'),
 (6, 'doge', 'assets/medias/images/doge.jpg', 'doge123459'),
 (7, 'flip', 'assets/medias/images/flip.jpg', 'flip123459'),
 (8, 'rangutan', 'assets/medias/images/rangutan.jpg', 'rangutan123459'),
-(9, '', 'assets/medias/images/ab07302cce47eeed8e97de191180f784.png', 'ab07302cce47eeed8e97de191180f784');
+(9, '', 'assets/medias/images/ab07302cce47eeed8e97de191180f784.png', 'ab07302cce47eeed8e97de191180f784'),
+(10, '', 'assets/medias/images/d9fc4bdaccbacca2078d1ccb66de68c2.gif', 'd9fc4bdaccbacca2078d1ccb66de68c2'),
+(14, 'dancing cat', 'assets/medias/images/a35107c7c6a2ccdb329f52dd9a1a34de.jpg', 'a35107c7c6a2ccdb329f52dd9a1a34de'),
+(15, 'jumping kid', 'assets/medias/images/9fdc54aca357ddb70c625ad4cafd10d6.jpg', '9fdc54aca357ddb70c625ad4cafd10d6'),
+(16, 'Einstein Musclé', 'assets/medias/images/53ea2c3791b06abb36e4f7b3efe2f6bc.jpg', '53ea2c3791b06abb36e4f7b3efe2f6bc');
 
 -- --------------------------------------------------------
 
@@ -172,10 +175,16 @@ ALTER TABLE `tag`
 --
 
 --
+-- AUTO_INCREMENT pour la table `memes`
+--
+ALTER TABLE `memes`
+  MODIFY `id_m` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT pour la table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
