@@ -34,8 +34,8 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize, co
 
     // Bottom text font size
     fontSize = canvas.width * bottomTextSize/2;
-    ctx.font = fontSize + 'px ' + font;
-    ctx.lineWidth = fontSize / 20;
+        ctx.font = fontSize + 'px ' + font;
+        ctx.lineWidth = fontSize / 20;
 
     // Draw bottom text
     ctx.textBaseline = 'bottom';

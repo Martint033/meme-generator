@@ -15,4 +15,3 @@
     echo $template->render (array('selection'=>$selectedImg, 'similarMemes'=>$similarMemes));
     
 
-

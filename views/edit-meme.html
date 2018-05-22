@@ -9,7 +9,8 @@
 <p>To create your meme, type your top and bottom text, choose the size of both texts, select a font and a color... and the meme is all yours </p>
 <img id="image-input" src="{{selection.picture}}" style="display: none;" width="100" height="100">
 
-
+<form action="upload-meme" method="post">
+    <input type="submit" value="Save" >
 <p>
     <textarea id="top-text"></textarea>
     Text size: <input type="range" id="top-text-size-input" class="updateChange" min="0.05" max="0.25" value="0.15" step="0.01">
@@ -84,17 +85,8 @@
 
 <!--Bouton Facebook -->
 
-<!-- <a name="fb_share" type="box_count" data-via="InfoWebMaster"></a>
-<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="icon/javascript"></script> -->
 
-
-<!-- <div class="fb-share-button" data-href="http://localhost/meme-generator/edit-meme/848cf1eba58093163ae8a2769876c1b9&amp;11"
-    data-layout="box_count" data-size="large" data-mobile-iframe="true">
-    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&amp;src=sdkpreparse"
-        class="fb-xfbml-parse-ignore"></a>
-</div> -->
-
-<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=box_count&size=large&mobile_iframe=true&width=91&height=58&appId"
+<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=button&size=large&mobile_iframe=true&width=91&height=58&appId"
     width="91" height="58" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
 <!--Bouton Like Facebook, servez vous -->
