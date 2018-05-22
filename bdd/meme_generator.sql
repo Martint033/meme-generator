@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 21 mai 2018 à 21:30
+-- Généré le :  mar. 22 mai 2018 à 17:30
 -- Version du serveur :  10.1.30-MariaDB
 -- Version de PHP :  7.2.2
 
@@ -86,8 +86,15 @@ CREATE TABLE `memes` (
 --
 
 INSERT INTO `memes` (`id_m`, `title_m`, `meme`, `newName_m`, `date_m`, `id_picture`) VALUES
-(1, 'meme1', 'assets/medias/images/53ea2c3791b06abb36e4f7b3efe2f6bc.jpg', NULL, '2018-05-18 14:17:51', 16),
-(2, 'coucou', 'pouet', 'pouetrandom', '2018-05-21 19:06:00', 14);
+(11, 'TEST', 'assets/medias/memes/5b040e2248c02.png', '5b040e2248c02', '2018-05-22 12:33:38', 6),
+(12, 'TEST', 'assets/medias/memes/5b040ed4c2ceb.png', '5b040ed4c2ceb', '2018-05-22 12:36:36', 16),
+(13, 'TEST', 'assets/medias/memes/5b04125840851.png', '5b04125840851', '2018-05-22 12:51:36', 17),
+(14, 'TEST', 'assets/medias/memes/5b0413f5da9a4.png', '5b0413f5da9a4', '2018-05-22 12:58:29', 8),
+(15, 'petite chatte', 'assets/medias/memes/5b041e37c0b18.png', '5b041e37c0b18', '2018-05-22 13:42:15', 6),
+(32, 'hamster qui rit', 'assets/medias/memes/5b04293a6a4a1.png', '5b04293a6a4a1', '2018-05-22 14:29:14', 10),
+(33, 'good night cat', 'assets/medias/memes/5b042a1533c37.jpg', '5b042a1533c37', '2018-05-22 14:32:53', 18),
+(35, 'hello barakstein', 'assets/medias/memes/5b04337936d4c.jpg', '5b04337936d4c', '2018-05-22 15:12:57', 16),
+(36, 'bg einstein', 'assets/medias/memes/5b0433ff07649.jpg', '5b0433ff07649', '2018-05-22 15:15:11', 16);
 
 -- --------------------------------------------------------
 
@@ -109,17 +116,14 @@ CREATE TABLE `pictures` (
 INSERT INTO `pictures` (`id_p`, `title_p`, `picture`, `newName`) VALUES
 (1, 'coffee', 'assets/medias/images/coffee.jpg', 'coffee123459'),
 (2, 'sheep', 'assets/medias/images/sheep.jpg', 'sheep123459'),
-(3, 'alcohol', 'assets/medias/images/alcohol.jpg', 'alcohol123459'),
 (4, 'apple', 'assets/medias/images/apple.jpg', 'apple123459'),
-(5, 'balance', 'assets/medias/images/balance.jpg', 'balance123459'),
 (6, 'doge', 'assets/medias/images/doge.jpg', 'doge123459'),
 (7, 'flip', 'assets/medias/images/flip.jpg', 'flip123459'),
 (8, 'rangutan', 'assets/medias/images/rangutan.jpg', 'rangutan123459'),
-(9, '', 'assets/medias/images/ab07302cce47eeed8e97de191180f784.png', 'ab07302cce47eeed8e97de191180f784'),
 (10, '', 'assets/medias/images/d9fc4bdaccbacca2078d1ccb66de68c2.gif', 'd9fc4bdaccbacca2078d1ccb66de68c2'),
-(14, 'dancing cat', 'assets/medias/images/a35107c7c6a2ccdb329f52dd9a1a34de.jpg', 'a35107c7c6a2ccdb329f52dd9a1a34de'),
-(15, 'jumping kid', 'assets/medias/images/9fdc54aca357ddb70c625ad4cafd10d6.jpg', '9fdc54aca357ddb70c625ad4cafd10d6'),
-(16, 'Einstein Musclé', 'assets/medias/images/53ea2c3791b06abb36e4f7b3efe2f6bc.jpg', '53ea2c3791b06abb36e4f7b3efe2f6bc');
+(16, 'Einstein Musclé', 'assets/medias/images/53ea2c3791b06abb36e4f7b3efe2f6bc.jpg', '53ea2c3791b06abb36e4f7b3efe2f6bc'),
+(17, '', 'assets/medias/images/d686c4eef16f5bd02c609d77b36cd082.jpg', 'd686c4eef16f5bd02c609d77b36cd082'),
+(18, 'sleepy cat', 'assets/medias/images/630a505056f3eecaeb39833d1a358b43.jpg', '630a505056f3eecaeb39833d1a358b43');
 
 -- --------------------------------------------------------
 
@@ -178,13 +182,13 @@ ALTER TABLE `tag`
 -- AUTO_INCREMENT pour la table `memes`
 --
 ALTER TABLE `memes`
-  MODIFY `id_m` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_m` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT pour la table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

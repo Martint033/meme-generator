@@ -64,7 +64,7 @@ function init () {
     canvas.width = canvas.height = 0;
 
     // Default/Demo text
-    topTextInput.value =  'Type your\ntext here';
+    topTextInput.value =  'Type your text here';
     bottomTextInput.value = 'And here too :)';
 
     img.onload = function () {

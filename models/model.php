@@ -4,7 +4,7 @@ require_once("utils/db.php");
 
 function hotMemes(){
     global $bdd;
-    $response = $bdd->prepare('SELECT id_m, title_m, meme, date_m FROM memes WHERE date_m <= CURRENT_TIMESTAMP() ORDER BY date_m DESC LIMIT 8');
+    $response = $bdd->prepare('SELECT id_m, title_m, meme, date_m FROM memes WHERE date_m <= CURRENT_TIMESTAMP() ORDER BY date_m DESC LIMIT 9');
     $response->execute();
     return $response->fetchAll(PDO::FETCH_ASSOC); 
 }
@@ -20,6 +20,14 @@ function addMeme($title,$memeURL,$newName_m, $id_picture){
     return $response->fetchAll(PDO::FETCH_ASSOC); 
 }
 
+function getMeme(){
+    global $bdd;
+    $id_m = $_GET['id'];
+    $response = $bdd->prepare("SELECT title_m, meme FROM memes WHERE id_m = :id_m");
+    $response->bindParam(':id_m', $id_m);
+    $response->execute();
+    return $response->fetch(PDO::FETCH_ASSOC);
+}
 
 function getallMemes(){
     global $bdd;
