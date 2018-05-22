@@ -168,7 +168,7 @@ footer{
 }
 
 .memeBg{
-  /* padding: 60px; */
+  padding: 60px;
   background-image: url("../medias/background/background.png");
   display: flex;
   flex-direction: column;
