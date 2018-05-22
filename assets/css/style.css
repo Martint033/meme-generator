@@ -55,7 +55,24 @@ nav {
   border: none;
 }
 
+.btn-save-dl{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.dl{
+  width: 80%;
+}
+
+.save{
+  width:80%;
+}
+
+#memeTitle{
+  height: 30px;
+  width: 80%;
+}
 .navigation{
   display: flex;
   flex-direction: column;
@@ -65,7 +82,7 @@ nav {
   margin-bottom: 30px;
 }
 
-.btn{
+input.btn, .btn{
   border-image: linear-gradient(to right,#EC196E, #8267A8, #26AADA)1/ 2px;
   padding: 9px; 
   margin: 17px 0 0 0;
@@ -73,7 +90,10 @@ nav {
   font-size: 14px;
   text-align: center;
   cursor: pointer;
+  background-color: transparent;
 }
+
+
 
 .linkNav{
   text-decoration: none;

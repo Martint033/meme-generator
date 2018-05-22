@@ -32,15 +32,37 @@
 </form>
 <form action="upload-meme" method="post">
     <p>
-        <canvas id="meme-canvas" src="{{selection.picture}}" title="Right click -> &quot;Save image as...&quot;"></canvas>
+        <canvas id="meme-canvas" src="{{selection.picture}}"></canvas>
     </p>
-    <p id="errorTitle">
+   <!-- <p id="errorTitle">
         <input id="memeTitle" type="text" placeholder="title of your meme">
     </p>
     <a id="download">Download as image</a>
 
-    <input type="submit" value="Save" name="saveMeme" id="save" class="btn">
+    <input type="submit" value="Save" name="saveMeme" id="save" class="btn"> -->
+
+    <p id="errorTitle">
+            <input id="memeTitle" type="text" placeholder="title of your meme">
+        </p>
+       <div class="btn-save-dl">
+            
+            <!-- <label for="saveMeme" class="btn save" id="save">Save on our site</label> -->
+            <input type="submit" value="Save" name="saveMeme" id="save" class="btn">
+            <a id="download" class="btn dl">download as image</a>
+        </div>
+    
 </form>
+
+
+
+
+
+
+
+
+
+
+
 
 <div id="fb-root"></div>
 <script>
@@ -53,7 +75,7 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
-<img src="{{selection.picture}}" width="100" height="100">
+
 
 <!--Bouton Twitter -->
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="InfoWebMaster">Tweet</a>
