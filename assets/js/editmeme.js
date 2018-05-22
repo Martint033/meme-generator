@@ -7,7 +7,6 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize) {
     canvas.width = img.width;
     canvas.height = img.height;
     
-
     // // Clear canvas
     // ctx.clearRect(0, 0, canvas.width, canvas.height);
     // // Draw main image
@@ -101,6 +100,7 @@ function doCanvas() {
 function downloadCanvas(link, canvasId, filename) {
     link.href = document.getElementById(canvasId).toDataURL();
     link.download = filename;
+    
 }
 
 /** 
@@ -115,4 +115,42 @@ document.getElementById('download').addEventListener('click', function() {
  * Draw something to canvas
  */
 doCanvas();
+
+document.getElementById('save').addEventListener('click', function(e) {
+    e.preventDefault();
+    var image = document.getElementById('img');
+    image.value = canvas.toDataURL("image/png");
+    var data = new FormData();
+    data.append("save", canvas.toDataURL("image/png"));
+    var paramAjax = {
+        method : "POST",
+        body : data,
+    };
+    // requete php
+    fetch("upload-meme", paramAjax).then(function(response){
+        return response.text();
+    }).then (function (response){
+        document.write('<img src="'+canvas.toDataURL("image/png")+'"/>');
+   
+    })
+});
+
+
+
+
+
+//     var canvasData = canvas.toDataURL("image/png");
+//     console.log(canvasData);
+//     var ajax = new XMLHttpRequest();
+//     ajax.open("POST",'upload-meme',false);
+//     ajax.setRequestHeader('Content-Type', 'application/upload');
+//     ajax.onreadystatechange = function() {
+//         if (ajax.readyState == 4 && (ajax.status == 200)) {
+//             alert("OK");
+//         } 
+//     }
+//     ajax.send(canvasData);
+   
+//   });
+
 
