@@ -39,8 +39,8 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize, co
 
     // Bottom text font size
     fontSize = canvas.width * bottomTextSize/2;
-    ctx.font = fontSize + 'px ' + font;
-    ctx.lineWidth = fontSize / 20;
+        ctx.font = fontSize + 'px ' + font;
+        ctx.lineWidth = fontSize / 20;
 
     // Draw bottom text
     ctx.textBaseline = 'bottom';
@@ -151,7 +151,7 @@ doCanvas();
 //        imgBase64: dataURL
 //     }
 //   }).done(function(o) {
-//     console.log('download'); 
+//     console.log('download');
 //     // If you want the file to be visible in the browser 
 //     // - please modify the callback in javascript. All you
 //     // need is to return the url to the file, you just saved 

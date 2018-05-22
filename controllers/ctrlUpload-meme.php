@@ -6,6 +6,7 @@ $url = $target_dir.'/'.$target_file;
 $idImg = addImg($title,$nom, $url);
 
 
+require_once 'vendor/autoload.php';
 
 
 $upload_dir = upload_meme();  //implement this function yourself
@@ -15,6 +16,9 @@ $img = $_POST['download'];
 $data = base64_decode($img);
 $file = $upload_dir."image_name.png";
 $success = file_put_contents($file, $data);
+
+
+// $template = $twig->load('upload-meme.html');
 
 header('Location: /meme-generator/upload-meme/'.$nom."&".$idImg);
 ?>
