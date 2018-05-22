@@ -125,11 +125,11 @@ function downloadCanvas(link, canvasId, filename) {
  * parameter (=the link element), ID of the canvas and a filename.
 */
 document.getElementById('download').addEventListener('click', function() {
-    downloadCanvas(this, 'meme-canvas', 'test.jpg');
+    var name = Math.random().toString(36).substring(2)
+    downloadCanvas(this, 'meme-canvas', name + '.jpg');
 }, false);
 
 /**
  * Draw something to canvas
  */
 doCanvas();
-
