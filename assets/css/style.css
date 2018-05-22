@@ -17,9 +17,18 @@ body {
   text-transform: uppercase;
   font-size: 20px;
 }
+
+.titleCreate{
+  margin-bottom: 50px;
+}
 .createImage{
   width: 100px;
   height:100px;
+}
+.subTitle{
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 35px 0 0 0;
 }
 nav {
     height: 80px;
@@ -57,7 +66,6 @@ nav {
 }
 
 .btn{
-  background-color: #E7F5F6;
   border-image: linear-gradient(to right,#EC196E, #8267A8, #26AADA)1/ 2px;
   padding: 9px; 
   margin: 17px 0 0 0;
@@ -84,11 +92,14 @@ footer{
   font-size: 10px;
 
 }
-
+#searchIn{
+  display: flex;
+  flex-direction: row;
+}
 
 .searchbarIn{
   height: 35px;
-  width: 220px;
+  width: 200px;
 }
 
 .multiselect {
@@ -97,7 +108,7 @@ footer{
 
 .selectBox {
   position: relative;
-  width: 260px;
+  width: 70%;
   margin: auto;
   height: 38px;
 
@@ -119,15 +130,28 @@ footer{
 
 }
 
-.errorBg{
-  background-image: url("../images/banniere.png");
+.getallMemes{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.oneMeme{
+  margin: 3px 0 3px 0;
 }
 
-.errorP{
-  color: red;
+#imgName{
+  margin: 25px 0 0 0;
+  font-size: 12px;
+  height: 33px;
+  padding: 0 0  0 4px;
 }
 
-/* Media queries */
+.uploadPic{
+  display: flex;
+  flex-direction: column;
+  
+}
 #checkboxes {
   display: none;
   border: 1px #dadada solid;
@@ -181,7 +205,9 @@ footer{
 
 .btn{
   margin: 17px 20px 0 20px;
+  background-color: #E7F5F6;
 }
+
 nav {
   justify-content: space-between;
   height: 90px;

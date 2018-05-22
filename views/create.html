@@ -2,27 +2,32 @@
 {% block content %}
 <main>
     <section class="navigation">
-            <h1 class="titre darkgraytext">Create your meme</h1>
+            <h1 class="titre darkgraytext titleCreate">Create your meme</h1>
             
                 <form action="upload" method="post" enctype="multipart/form-data">
                     <a class="linkNav" ><label for="fileToUpload" class="btn">upload your image</label>
                     <input name="fileToUpload" id="fileToUpload" class="input-file" type="file"></a>
-                    <input type="text" name="title" id="imgName" placeholder="Enter a name (eg : Giant carrot)">
-                    <input type="submit" value="Validate" name="submit">
+                    <div class="uploadPic">
+                      <input type="text" name="title" id="imgName" placeholder="Enter a name">
+                      <label for="submit" class="btn">Go
+                      <input type="submit" value="Go" name="submit" class="input-file">
+                    </div>
                 </form>
             
             <p class="subTitle">or select one below</p>
     </section>
      <section class="hotMemes">
-            <div id="searchIn" >
+            
                 <input type="text" class="searchbarIn" placeholder="Search">
                 <a class="searchButtonIn"><i class="darkgraytext fas fa-search"></i></a>
-            </div>
+              
             <form>
+                <div id="searchIn" >
                     <div class="multiselect">
+                      
                       <div class="selectBox" id="select">
                         <select>
-                          <option>Select an option</option>
+                          <option>Select a tag</option>
                         </select>
                         <div class="overSelect"></div>
                       </div>
@@ -36,13 +41,14 @@
                     <div class="submit-btn">
                     <label class="btn submit-categories">search</label><button class="input-file" type="submit">Search</button>
                     </div>
+                  </div>
                   </form>
-                  
+              
                   
     </section>
-    <section class="allImages">
+    <section class="allImages getallMemes">
       {% for image in images %}
-      <a href="edit-meme/{{image.newName}}&{{image.id_p}}"><img class="createImage" src="{{image.picture}}" width="200" height="200"></a>
+      <a href="edit-meme/{{image.newName}}&{{image.id_p}}"><img class="createImage " src="{{image.picture}}" width="200" height="200"></a>
       {% endfor %}
     </section>
 </main>
