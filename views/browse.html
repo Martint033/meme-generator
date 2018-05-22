@@ -2,8 +2,9 @@
 
 {% block content %}
 <h2>All the memes</h2>
+<div class="getallMemes">
 {% for meme in memes %}
-<img src="{{ meme.meme }}" alt="" width="150" height="150">
-
+<img class="oneMeme" src="{{ meme.meme }}" alt="" width="150" height="150">
 {% endfor %}
+</div>
 {% endblock %}
