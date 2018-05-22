@@ -1,4 +1,26 @@
-{% extends 'template.html' %} {% block content %}
+{% extends 'template.html' %} 
+{% block content %}
+
+<img id="image-input" src="{{selection.picture}}" width="100" height="100">
+<p>
+    <textarea id="top-text"></textarea>
+    Text size: <input type="range" id="top-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
+</p>
+<p>
+    <textarea id="bottom-text"></textarea>
+    Text size: <input type="range" id="bottom-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
+</p>
+
+<p>
+    <button id="generate-btn">Generate!</button>
+</p>
+<p>
+    <canvas id="meme-canvas" title="Right click -> &quot;Save image as...&quot;"></canvas>
+</p>
+
+<a id="download">Download as image</a>
+
+
 <div id="fb-root"></div>
 <script>
     (function (d, s, id) {
@@ -23,11 +45,11 @@
 <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="icon/javascript"></script> -->
 
 
-<div class="fb-share-button" data-href="http://localhost/meme-generator/edit-meme/848cf1eba58093163ae8a2769876c1b9&amp;11"
+<!-- <div class="fb-share-button" data-href="http://localhost/meme-generator/edit-meme/848cf1eba58093163ae8a2769876c1b9&amp;11"
     data-layout="box_count" data-size="large" data-mobile-iframe="true">
     <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&amp;src=sdkpreparse"
         class="fb-xfbml-parse-ignore"></a>
-</div>
+</div> -->
 
 <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=box_count&size=large&mobile_iframe=true&width=91&height=58&appId"
     width="91" height="58" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
@@ -39,26 +61,7 @@ scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:65px; 
 
 
 
-{% extends 'template.html' %}
-{% block content %}
 
-<img id="image-input" src="{{selection.picture}}" width="100" height="100">
-<p>
-    <textarea id="top-text"></textarea>
-    Text size: <input type="range" id="top-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
-</p>
-<p>
-    <textarea id="bottom-text"></textarea>
-    Text size: <input type="range" id="bottom-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
-</p>
 
-<p>
-    <button id="generate-btn">Generate!</button>
-</p>
-<p>
-    <canvas id="meme-canvas" title="Right click -> &quot;Save image as...&quot;"></canvas>
-</p>
-
-<a id="download">Download as image</a>
 
 {% endblock %}
