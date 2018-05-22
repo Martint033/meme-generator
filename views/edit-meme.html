@@ -32,17 +32,16 @@
     </select>
 </form>
 <form action="upload-meme" method="post">
-    <p>
-        <canvas id="meme-canvas" src="{{selection.picture}}" title="Right click -> &quot;Save image as...&quot;"></canvas>
-    </p>
-    <p id="errorTitle">
-        <input id="memeTitle" type="text" placeholder="title of your meme">
-    </p>
-    <a id="download">Download as image</a>
+<p>
+    <canvas id="meme-canvas" src="{{selection.picture}}" title="Right click -> &quot;Save image as...&quot;"></canvas>
+</p>
 
-    <input type="submit" value="Save" name="saveMeme" id="save" class="btn">
+<a id="download">Download as image</a>
 </form>
 
+
+<input type="submit" value="Save" name="saveMeme" id="save">
+</form>
 <div id="fb-root"></div>
 <script>
     (function (d, s, id) {
@@ -63,17 +62,8 @@
 
 <!--Bouton Facebook -->
 
-<!-- <a name="fb_share" type="box_count" data-via="InfoWebMaster"></a>
-<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="icon/javascript"></script> -->
 
-
-<!-- <div class="fb-share-button" data-href="http://localhost/meme-generator/edit-meme/848cf1eba58093163ae8a2769876c1b9&amp;11"
-    data-layout="box_count" data-size="large" data-mobile-iframe="true">
-    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&amp;src=sdkpreparse"
-        class="fb-xfbml-parse-ignore"></a>
-</div> -->
-
-<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=box_count&size=large&mobile_iframe=true&width=91&height=58&appId"
+<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=button&size=large&mobile_iframe=true&width=91&height=58&appId"
     width="91" height="58" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
 <!--Bouton Like Facebook, servez vous -->
