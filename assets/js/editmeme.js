@@ -14,14 +14,11 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize, co
     canvas.width = img.width;
     canvas.height = img.height;
     
-    // // Clear canvas
-    // ctx.clearRect(0, 0, canvas.width, canvas.height);
     // // Draw main image
     ctx.drawImage(img, 0, 0);
 
     // Text style: white with black borders
     ctx.fillStyle = color;
-    ctx.strokeStyle = 'black';
     ctx.textAlign = 'center';
 
     // Top text font size
@@ -33,7 +30,6 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize, co
     ctx.textBaseline = 'top';
     topText.split('\n').forEach(function (t, i) {
         ctx.fillText(t, canvas.width / 2, i * fontSize, canvas.width);
-        ctx.strokeText(t, canvas.width / 2, i * fontSize, canvas.width);
     });
 
     // Bottom text font size
@@ -45,7 +41,6 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize, co
     ctx.textBaseline = 'bottom';
     bottomText.split('\n').reverse().forEach(function (t, i) { // .reverse() because it's drawing the bottom text from the bottom up
         ctx.fillText(t, canvas.width / 2, canvas.height - i * fontSize, canvas.width);
-        ctx.strokeText(t, canvas.width / 2, canvas.height - i * fontSize, canvas.width);
     });
 }
 
@@ -64,14 +59,13 @@ function init () {
 
     var img = new Image();
     img.src = imageInput.src;
-    // img.width = imageInput.width;
-    // img.height = imageInput.height;
     ctx = canvas.getContext('2d');
 
     canvas.width = canvas.height = 0;
 
     // Default/Demo text
-    topTextInput.value = bottomTextInput.value = 'Demo\nText';
+    topTextInput.value =  'Type your\ntext here';
+    bottomTextInput.value = 'And here too :)';
 
     img.onload = function () {
         generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value, color.value, font.value);   
@@ -135,25 +129,30 @@ document.getElementById('download').addEventListener('click', function() {
 doCanvas();
 
 document.getElementById('save').addEventListener('click', function(e) {
-
     e.preventDefault();
     
-    // var image = document.getElementById('img');
-    // image.value = canvas.toDataURL("image/png");
-    var data = new FormData();
-    data.append("save", canvas.toDataURL("image/png"));
-    data.append('id_picture', document.getElementById("id_picture").value);
-    console.log(document.getElementById("id_picture").value);
-    var paramAjax = {
-        method : "POST",
-        body : data,
-    };
-    // requete php
-    fetch("upload-meme", paramAjax).then(function(response){
-        return response.text();
-    }).then (function (response){
+    var title = document.getElementById('memeTitle');
+    
+    if (title.value.length > 1 ){
+        var data = new FormData();
+        data.append("save", canvas.toDataURL("image/png"));
+        data.append('id_picture', document.getElementById("id_picture").value);
+        data.append('memeTitle', title.value);
+        console.log(document.getElementById("id_picture").value);
+        var paramAjax = {
+            method : "POST",
+            body : data,
+        };
+        // requete php
+        fetch("upload-meme", paramAjax).then(function(response){
+            return response.text();
+        }).then (function (response){
 
-    });
+        });
+    }
+    else { 
+        document.getElementById('errorTitle').innerHTML += "Veuillez donner un titre à votre meme";
+    }
 });
 
 
