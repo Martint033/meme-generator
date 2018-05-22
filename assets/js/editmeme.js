@@ -14,7 +14,6 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize, co
     canvas.width = img.width;
     canvas.height = img.height;
     
-
     // // Clear canvas
     // ctx.clearRect(0, 0, canvas.width, canvas.height);
     // // Draw main image
@@ -118,7 +117,7 @@ function doCanvas() {
 function downloadCanvas(link, canvasId, filename) {
     link.href = document.getElementById(canvasId).toDataURL();
     link.download = filename;
-    console.log('coucou');
+    
 }
 
 /** 
@@ -126,7 +125,8 @@ function downloadCanvas(link, canvasId, filename) {
  * parameter (=the link element), ID of the canvas and a filename.
 */
 document.getElementById('download').addEventListener('click', function() {
-    downloadCanvas(this, 'meme-canvas', 'test.jpg');
+    var name = Math.random().toString(36).substring(2)
+    downloadCanvas(this, 'meme-canvas', name + '.jpg');
 }, false);
 
 /**
@@ -134,26 +134,27 @@ document.getElementById('download').addEventListener('click', function() {
  */
 doCanvas();
 
-// var ajax = new XMLHttpRequest();
+document.getElementById('save').addEventListener('click', function(e) {
 
-// ajax.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) {
-//       document.getElementById("demo").innerHTML = this.responseText;
-//     }
-//   };
-//   ajax.open("GET", "ajax_info.txt", true);
-//   ajax.send(); 
+    e.preventDefault();
+    
+    // var image = document.getElementById('img');
+    // image.value = canvas.toDataURL("image/png");
+    var data = new FormData();
+    data.append("save", canvas.toDataURL("image/png"));
+    data.append('id_picture', document.getElementById("id_picture").value);
+    console.log(document.getElementById("id_picture").value);
+    var paramAjax = {
+        method : "POST",
+        body : data,
+    };
+    // requete php
+    fetch("upload-meme", paramAjax).then(function(response){
+        return response.text();
+    }).then (function (response){
 
-// $.ajax({
-//     type: "POST",
-//     url: "ctrlUpload-meme.php",
-//     data: { 
-//        imgBase64: dataURL
-//     }
-//   }).done(function(o) {
-//     console.log('download');
-//     // If you want the file to be visible in the browser 
-//     // - please modify the callback in javascript. All you
-//     // need is to return the url to the file, you just saved 
-//     // and than put the image in your browser.
-//   });
+    });
+});
+
+
+

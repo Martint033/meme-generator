@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<p>{{selection.id_p}}</p>
+<input type="hidden" name="id_picture"  id="id_picture" value="{{selection.id_p}}"> 
 
 
 <h2>Create your meme</h2>
@@ -31,7 +31,7 @@
         <option value="Impact">Impact</option>
     </select>
 </form>
-
+<form action="upload-meme" method="post">
 <p>
     <canvas id="meme-canvas" src="{{selection.picture}}" title="Right click -> &quot;Save image as...&quot;"></canvas>
 </p>
@@ -40,6 +40,8 @@
 </form>
 
 
+<input type="submit" value="Save" name="saveMeme" id="save">
+</form>
 <div id="fb-root"></div>
 <script>
     (function (d, s, id) {
@@ -53,7 +55,7 @@
 </script>
 <img src="{{selection.picture}}" width="100" height="100">
 
-<!--Bouton Tweeter -->
+<!--Bouton Twitter -->
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="InfoWebMaster">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 
