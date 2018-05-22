@@ -1,7 +1,14 @@
 let topTextInput, bottomTextInput, topTextSizeInput, bottomTextSizeInput, imageInput, generateBtn, canvas, ctx;
 
-function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize) {
+function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize, color, font) {
     let fontSize;
+    if (font == "default"){
+        font = "Arial";
+    }
+    
+    if (color == "default"){
+        color = 'white';
+    }
 
     // Size canvas to image
     canvas.width = img.width;
@@ -13,13 +20,13 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize) {
     ctx.drawImage(img, 0, 0);
 
     // Text style: white with black borders
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = color;
     ctx.strokeStyle = 'black';
     ctx.textAlign = 'center';
 
     // Top text font size
     fontSize = canvas.width * topTextSize/2;
-    ctx.font = fontSize + 'px Impact';
+    ctx.font = fontSize + 'px ' + font;
     ctx.lineWidth = fontSize / 20;
 
     // Draw top text
@@ -31,7 +38,7 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize) {
 
     // Bottom text font size
     fontSize = canvas.width * bottomTextSize/2;
-    ctx.font = fontSize + 'px Impact';
+    ctx.font = fontSize + 'px ' + font;
     ctx.lineWidth = fontSize / 20;
 
     // Draw bottom text
@@ -51,6 +58,10 @@ function init () {
     imageInput = document.getElementById('image-input');
     generateBtn = document.getElementById('generate-btn');
     canvas = document.getElementById('meme-canvas');
+    color = document.getElementById("txtColor");
+    font = document.getElementById("fontStyle");
+    updateChange = document.getElementsByClassName("updateChange");
+
     var img = new Image();
     img.src = imageInput.src;
     // img.width = imageInput.width;
@@ -62,20 +73,26 @@ function init () {
     // Default/Demo text
     topTextInput.value = bottomTextInput.value = 'Demo\nText';
 
-    // Generate button click listener
-    generateBtn.addEventListener('click', function () {
-        
-            generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);   
+    img.onload = function () {
+        generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value, color.value, font.value);   
+    };
+
+    for(var i = 0; i < updateChange.length; i++) {
+        updateChange[i].addEventListener('change', function() {
+            generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value, color.value, font.value);   
+        });
+    }
+
+    color.addEventListener('change', function () {
+        generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value, color.value, font.value);   
     });
 
     topTextInput.addEventListener('input', function () {
-
-            generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);   
+        generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value, color.value, font.value);   
     });
 
     bottomTextInput.addEventListener('input', function () {
-     
-        generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);
+        generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value, color.value, font.value);
     });
 }
 
@@ -108,7 +125,8 @@ function downloadCanvas(link, canvasId, filename) {
  * parameter (=the link element), ID of the canvas and a filename.
 */
 document.getElementById('download').addEventListener('click', function() {
-    downloadCanvas(this, 'meme-canvas', 'test.jpg');
+    var name = Math.random().toString(36).substring(2)
+    downloadCanvas(this, 'meme-canvas', name + '.jpg');
 }, false);
 
 /**
@@ -117,11 +135,15 @@ document.getElementById('download').addEventListener('click', function() {
 doCanvas();
 
 document.getElementById('save').addEventListener('click', function(e) {
+
     e.preventDefault();
-    var image = document.getElementById('img');
-    image.value = canvas.toDataURL("image/png");
+    
+    // var image = document.getElementById('img');
+    // image.value = canvas.toDataURL("image/png");
     var data = new FormData();
     data.append("save", canvas.toDataURL("image/png"));
+    data.append('id_picture', document.getElementById("id_picture").value);
+    console.log(document.getElementById("id_picture").value);
     var paramAjax = {
         method : "POST",
         body : data,
@@ -130,27 +152,9 @@ document.getElementById('save').addEventListener('click', function(e) {
     fetch("upload-meme", paramAjax).then(function(response){
         return response.text();
     }).then (function (response){
-        document.write('<img src="'+canvas.toDataURL("image/png")+'"/>');
-   
-    })
+
+    });
 });
 
-
-
-
-
-//     var canvasData = canvas.toDataURL("image/png");
-//     console.log(canvasData);
-//     var ajax = new XMLHttpRequest();
-//     ajax.open("POST",'upload-meme',false);
-//     ajax.setRequestHeader('Content-Type', 'application/upload');
-//     ajax.onreadystatechange = function() {
-//         if (ajax.readyState == 4 && (ajax.status == 200)) {
-//             alert("OK");
-//         } 
-//     }
-//     ajax.send(canvasData);
-   
-//   });
 
 

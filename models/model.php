@@ -9,9 +9,8 @@ function hotMemes(){
     return $response->fetchAll(PDO::FETCH_ASSOC); 
 }
 
-function addMeme($title,$memeURL,$newName_m){
+function addMeme($title,$memeURL,$newName_m, $id_picture){
     global $bdd;
-    $id_picture = $_GET['id'];
     $response = $bdd->prepare("INSERT INTO memes(`title_m`,`meme`, newName_m, `date_m`, id_picture) VALUES (:title, :memeURL,:newName_m, CURRENT_TIMESTAMP, :id_picture)");
     $response->bindParam(":title",$title);
     $response->bindParam(":memeURL",$memeURL);
@@ -29,15 +28,15 @@ function getallMemes(){
     return $response->fetchAll(PDO::FETCH_ASSOC);
 }    
 
-if (isset($_GET['id'])){
 function getsimilarMemes(){
     global $bdd;
+    $id_p = $_GET['id'];
     $response = $bdd->prepare("SELECT id_picture ,meme FROM memes WHERE id_picture = :id_p");
-    $response->bindParam(":id_p", $_GET['id']);
+    $response->bindParam(":id_p", $id_p);
     $response->execute();
     return $response->fetchAll(PDO::FETCH_ASSOC);
 }
-}
+
 // function getMemeTag(){
     
 //     global $bdd;

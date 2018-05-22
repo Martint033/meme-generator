@@ -1,20 +1,21 @@
 <?php
-_POST;
+$data = $_POST['save'];
 
-$test = base64_decode($_POST['save']);
-$file = uniqid().".png";
-file_put_contents($file,$test);
+$newName_m = uniqid();
+$memeURL = "assets/medias/memes/".$newName_m.".png";
+$title = "TEST";
+var_dump($_GET['id']);
 
+list($type, $data) = explode(';', $data);
+list(, $data)      = explode(',', $data);
+$data = base64_decode($data);
+file_put_contents($memeURL,$data);
 
-// if (isset($GLOBALS["HTTP_RAW_POST_DATA"])) {
-//   $imageData = $GLOBALS['HTTP_RAW_POST_DATA'];
-//   $filteredData = substr($imageData, strpos($imageData, ",") + 1);
-//   $unencodedData = base64_decode($filteredData);
-//   $fp = fopen('/path/to/file.png', 'wb');
-//     var_dump($imageData);
-//   fwrite($fp, $unencodedData);
-//   fclose($fp);
-// }
+require("models/model.php");
+
+$id_picture = $_POST['id_picture'];
+addMeme($title, $memeURL, $newName_m, $id_picture);
+
 
 
 
