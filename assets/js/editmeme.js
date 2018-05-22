@@ -101,6 +101,7 @@ function doCanvas() {
 function downloadCanvas(link, canvasId, filename) {
     link.href = document.getElementById(canvasId).toDataURL();
     link.download = filename;
+    console.log('coucou');
 }
 
 /** 
@@ -116,3 +117,26 @@ document.getElementById('download').addEventListener('click', function() {
  */
 doCanvas();
 
+// var ajax = new XMLHttpRequest();
+
+// ajax.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//       document.getElementById("demo").innerHTML = this.responseText;
+//     }
+//   };
+//   ajax.open("GET", "ajax_info.txt", true);
+//   ajax.send(); 
+
+// $.ajax({
+//     type: "POST",
+//     url: "ctrlUpload-meme.php",
+//     data: { 
+//        imgBase64: dataURL
+//     }
+//   }).done(function(o) {
+//     console.log('download'); 
+//     // If you want the file to be visible in the browser 
+//     // - please modify the callback in javascript. All you
+//     // need is to return the url to the file, you just saved 
+//     // and than put the image in your browser.
+//   });

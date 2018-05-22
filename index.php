@@ -34,4 +34,8 @@ switch($path){
     case "/meme-generator/edit-meme":
         require('controllers/ctrlEditMeme.php');
         break;
+
+    case "/meme-generator/upload-meme":
+        require('controllers/ctrlUpload-meme.php');
+        break;
 }
