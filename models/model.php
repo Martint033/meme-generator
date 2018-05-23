@@ -39,7 +39,7 @@ function getallMemes(){
 function getsimilarMemes(){
     global $bdd;
     $id_p = $_GET['id'];
-    $response = $bdd->prepare("SELECT id_picture ,meme FROM memes WHERE id_picture = :id_p");
+    $response = $bdd->prepare("SELECT id_picture, id_m, title_m, meme FROM memes WHERE id_picture = :id_p");
     $response->bindParam(":id_p", $id_p);
     $response->execute();
     return $response->fetchAll(PDO::FETCH_ASSOC);

@@ -2,23 +2,9 @@
   font-family: "RobotoReg";
   src: url("../fonts/roboto-regular.ttf") format("opentype");
 }
-h2, h3 {
-  text-align: center;
-  border-image: linear-gradient(to right,#EC196E, #8267A8, #26AADA)1/ 2px;
-  margin-left: 100px;
-  margin-right: 100px;
-}        
-
-p {
-  text-align: center;
-}
-
-.range {
-  text-align: center;
-}
-
-#top-text-size-input, #bottom-text {
-  text-align: center;
+        
+.title_m{
+  text-transform: uppercase;
 }
 
 .darkgrayBG{
@@ -78,6 +64,15 @@ nav {
   border: none;
 }
 
+textarea{
+  resize: none;
+}
+
+
+.btnSocial{
+  display: flex;
+  flex-direction: row;
+}
 .btn-save-dl{
   display: flex;
   flex-direction: column;
@@ -96,6 +91,24 @@ nav {
   height: 30px;
   width: 80%;
 }
+
+#memeWidth{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.h2edit-meme{
+  display: flex;
+  justify-content: center;
+}
+
+#meme-canvas {
+  padding: 8%;
+  
+}
+
 .navigation{
   display: flex;
   flex-direction: row;
@@ -184,6 +197,10 @@ footer{
   justify-content: center;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 41d9cba36b354770ab1e39ac8d09b6e32afdbf06
 .oneMeme{
   margin-left: 25px;
   margin-bottom: 25px;
@@ -234,6 +251,10 @@ footer{
 
 .allImages{
   margin-top: 20px;
+}
+
+.displayMeme{
+  width :80%;
 }
 .introduction{
   font-size: 14px;
@@ -331,7 +352,15 @@ nav {
   }
 }
 
+<<<<<<< HEAD
 @media (min-width: 1200px) {
+=======
+@media (min-width: 1200px) {  }
+
+.displayMeme{
+  width :50%;
+}
+>>>>>>> 41d9cba36b354770ab1e39ac8d09b6e32afdbf06
 
     #meme-canvas {
     width: 300px;
