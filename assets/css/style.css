@@ -197,10 +197,6 @@ footer{
   justify-content: center;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 41d9cba36b354770ab1e39ac8d09b6e32afdbf06
 .oneMeme{
   margin-left: 25px;
   margin-bottom: 25px;
@@ -277,17 +273,7 @@ textarea{
 }
 
 select, textarea {
- 
-  height: 30px;
-	margin: 2px;
-	padding: 0 4px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-o-border-radius: 5px;
-	border-radius: 5px;
-  border : none;
-  border-bottom: 0.5px solid black;
-	font-size: 1em;
+  margin: 5px;
 }
 
 input[type="color"] {
@@ -304,7 +290,10 @@ input[type="color"]::-webkit-color-swatch {
 	border: none;
 }
 
+#meme-canvas {
+  width: 0%;
 
+} 
 @media (min-width: 992px) { 
   
 .navigation{
@@ -352,15 +341,11 @@ nav {
   }
 }
 
-<<<<<<< HEAD
-@media (min-width: 1200px) {
-=======
-@media (min-width: 1200px) {  }
+@media (min-width: 1200px) {  
 
 .displayMeme{
   width :50%;
 }
->>>>>>> 41d9cba36b354770ab1e39ac8d09b6e32afdbf06
 
     #meme-canvas {
     width: 300px;
