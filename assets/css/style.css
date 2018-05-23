@@ -2,7 +2,24 @@
   font-family: "RobotoReg";
   src: url("../fonts/roboto-regular.ttf") format("opentype");
 }
-        
+h2, h3 {
+  text-align: center;
+  border-image: linear-gradient(to right,#EC196E, #8267A8, #26AADA)1/ 2px;
+  margin-left: 100px;
+  margin-right: 100px;
+}        
+
+p {
+  text-align: center;
+}
+
+.range {
+  text-align: center;
+}
+
+#top-text-size-input, #bottom-text {
+  text-align: center;
+}
 
 .darkgrayBG{
   background-color: #444242;
@@ -81,7 +98,7 @@ nav {
 }
 .navigation{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-top:10px;
@@ -164,10 +181,17 @@ footer{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
+
 .oneMeme{
-  margin: 3px 0 3px 0;
+  margin-left: 25px;
+  margin-bottom: 25px;
+}
+
+
+.similar {
+  text-align: center;
 }
 
 #imgName{
@@ -185,12 +209,10 @@ footer{
 #checkboxes {
   display: none;
   border: 1px #dadada solid;
-
 }
 
 #checkboxes label {
   display: block;
- 
 }
 
 #checkboxes label:hover {
@@ -248,7 +270,7 @@ select, textarea {
 }
 
 input[type="color"] {
-	-webkit-appearance: none;
+	-web-kit-appearance: none;
 	border: none;
 
   background: none;
@@ -265,21 +287,20 @@ input[type="color"]::-webkit-color-swatch {
 @media (min-width: 992px) { 
   
 .navigation{
-    /* padding: 60px; */
-  flex-direction: row;
+  padding: 60px;
+  flex-direction: column;
   justify-content: center;
 }
 
 .memeBg{
   padding: 60px;
   background-image: url("../medias/background/background.png");
+  background-size: cover;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  height: auto;
+  justify-content: space-around;
+  height: 300px;
   width: auto;
-  /* background-repeat: no-repeat; */
 }
 
 .btn{
@@ -310,10 +331,10 @@ nav {
   }
 }
 
-@media (min-width: 1200px) {  }
+@media (min-width: 1200px) {
 
-
-#meme-canvas {
-  width: 300px;
-  height: 300px;
+    #meme-canvas {
+    width: 300px;
+    height: 300px;
+  } 
 }
