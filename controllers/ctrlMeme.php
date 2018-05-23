@@ -12,5 +12,3 @@
 
     $template = $twig->load('meme.html');
     echo $template->render(array('meme'=>$oneMeme,));
-
-    var_dump($oneMeme);
