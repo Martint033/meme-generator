@@ -45,6 +45,14 @@ function getsimilarMemes(){
     return $response->fetchAll(PDO::FETCH_ASSOC);
 }
 
+// function getsimilar(){
+//     global $bdd;
+//     $id_m = $_GET['id'];
+//     $response = $bdd->prepare("SELECT id_m, meme FROM memes WHERE id_m = :id_m");
+//     $response->bindParam(':id_m', $id_m);
+//     $response->execute();
+//     return $response->fetchAll(PDO::FETCH_ASSOC);
+// }
 // function getMemeTag(){
     
 //     global $bdd;
