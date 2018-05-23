@@ -71,8 +71,15 @@ textarea{
 
 .btnSocial{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
+
+.share-button{
+  margin: 10px;
+}
+
 .btn-save-dl{
   display: flex;
   flex-direction: column;
@@ -83,13 +90,11 @@ textarea{
   width: 80%;
 }
 
-.save{
-  width:80%;
-}
 
 #memeTitle{
   height: 30px;
-  width: 80%;
+  width: 70%;
+  margin: 0;
 }
 
 #memeWidth{
@@ -108,7 +113,9 @@ textarea{
   padding: 8%;
   
 }
-
+.similar{
+  margin-left: 40px;
+}
 .navigation{
   display: flex;
   flex-direction: column;
@@ -127,6 +134,7 @@ input.btn, .btn{
   text-align: center;
   cursor: pointer;
   background-color: transparent;
+  width: 100%;
 }
 
 .range{
@@ -273,14 +281,6 @@ select, textarea {
  
   height: 30px;
 	margin: 2px;
-	padding: 0 4px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-o-border-radius: 5px;
-	border-radius: 5px;
-  border : none;
-  border-bottom: 0.5px solid black;
-	font-size: 1em;
 }
 
 input[type="color"] {
@@ -297,6 +297,13 @@ input[type="color"]::-webkit-color-swatch {
 	border: none;
 }
 
+.edit-meme{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
 
 @media (min-width: 992px) { 
   
@@ -321,6 +328,7 @@ input[type="color"]::-webkit-color-swatch {
 .btn{
   margin: 17px 20px 0 20px;
   background-color: #E7F5F6;
+  
 }
 
 nav {

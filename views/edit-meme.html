@@ -20,22 +20,23 @@
     </p>
 
 </form>
-
+<div class="edit-meme">
 
 <img id="image-input" src="{{selection.picture}}" style="display: none;" width="100" height="100">
 
 <form action="upload-meme" method="post">
+        <textarea id="top-text"></textarea>
     <div class="range">
         <p>
-            <textarea id="top-text"></textarea>
+           
             <p>Text size:</p>
             <input type="range" id="top-text-size-input" class="updateChange custom-slider" min="0.05" max="0.25" value="0.15" step="0.01">
         </p>
     </div>
-
+    <textarea id="bottom-text"></textarea>
     <div class="range"> 
     <p>
-        <textarea id="bottom-text"></textarea>
+        
             <p>Text size:</p>
             <input type="range" id="bottom-text-size-input" class="updateChange custom-slider" min="0.05" max="0.25" value="0.15" step="0.01">
     </p>
@@ -69,9 +70,9 @@
     </div>
 
 </form>
+</div>
 
-
-<div id="fb-root"></div>
+<div id="fb-root">
 <script>
     (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -85,22 +86,22 @@
 
 <!--Bouton Twitter -->
 <div class="btnSocial">
-<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="InfoWebMaster">Tweet</a>
+<a href="http://twitter.com/share" class="twitter-share-button share-button" data-count="vertical" data-via="InfoWebMaster">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 
 
 <!--Bouton Facebook -->
 
-<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=button&size=large&mobile_iframe=true&width=91&height=58&appId"
+<iframe class="share-button" src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=button&size=large&mobile_iframe=true&width=91&height=58&appId"
     width="91" height="58" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 </div>
-
+</div>
 <!--Bouton Like Facebook, servez vous -->
 
 <!-- <iframe src="http://www.facebook.com/plugins/like.php?href=http://www.example.com/page.html&layout=box_count&show_faces=true&width=65&action=like&font=arial&colorscheme=light&height=65" 
 scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:65px; height:65px; margin-top:3px;" allowTransparency="true"></iframe> -->
 
-<h3>Similar : </h3>
+<h3 class="similar">Similar : </h3>
 
 {% for memes in similarMemes %}
 <img src="{{memes.meme}}" alt="" width="100" height="100"> {% endfor %} {% endblock %} {% block script %}
