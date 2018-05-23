@@ -61,6 +61,10 @@ nav {
   border: none;
 }
 
+p.textarea{
+  resize: none;
+}
+
 .btn-save-dl{
   display: flex;
   flex-direction: column;
@@ -79,6 +83,24 @@ nav {
   height: 30px;
   width: 80%;
 }
+
+#memeWidth{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.h2edit-meme{
+  display: flex;
+  justify-content: center;
+}
+
+#meme-canvas {
+  padding: 8%;
+  
+}
+
 .navigation{
   display: flex;
   flex-direction: column;
@@ -166,6 +188,8 @@ footer{
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+
 .oneMeme{
   margin: 3px 0 3px 0;
 }
