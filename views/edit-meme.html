@@ -55,17 +55,6 @@
 
     </form>
 
-
-
-
-
-
-
-
-
-
-
-
     <div id="fb-root"></div>
     <script>
         (function (d, s, id) {
@@ -98,4 +87,4 @@ scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:65px; 
     <h3>Similar : </h3>
 
     {% for memes in similarMemes %}
-    <img src="{{memes.meme}}" alt="" width="100" height="100"> {% endfor %} {% endblock %}
+    <a href="meme/{{memes.id_m}}"><img src="{{memes.meme}}" alt="" width="100" height="100"></a> {% endfor %} {% endblock %}

@@ -1,6 +1,19 @@
 {% extends 'template.html' %}
 {% block content %}
+<p class="title_m">You are looking at "{{meme.title_m}}"</p>
+<img class="displayMeme" src="{{meme.meme}}">
 
-<img src="{{meme.meme}}" width="100" height="100">
 
+
+<div>
+    <h2>
+        Share on :
+    </h2>        
+    <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=button&size=large&mobile_iframe=true&width=91&height=58&appId"
+        width="91" height="58" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="InfoWebMaster">Tweet</a>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+</div>
+<h3>Similar : </h3>
 {% endblock %}  

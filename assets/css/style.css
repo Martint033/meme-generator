@@ -3,6 +3,9 @@
   src: url("../fonts/roboto-regular.ttf") format("opentype");
 }
         
+.title_m{
+  text-transform: uppercase;
+}
 
 .darkgrayBG{
   background-color: #444242;
@@ -213,6 +216,10 @@ footer{
 .allImages{
   margin-top: 20px;
 }
+
+.displayMeme{
+  width :80%;
+}
 .introduction{
   font-size: 14px;
 }
@@ -312,6 +319,9 @@ nav {
 
 @media (min-width: 1200px) {  }
 
+.displayMeme{
+  width :50%;
+}
 
 #meme-canvas {
   width: 300px;
