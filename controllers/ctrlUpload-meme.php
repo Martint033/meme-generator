@@ -2,7 +2,7 @@
 $data = $_POST['save'];
 
 $newName_m = uniqid();
-$memeURL = "assets/medias/memes/".$newName_m.".png";
+$memeURL = "assets/medias/memes/".$newName_m.".jpg";
 
 list($type, $data) = explode(';', $data);
 list(, $data)      = explode(',', $data);
