@@ -1,12 +1,20 @@
 {% extends 'template.html' %}
 {% block content %}
 <main>
-    <section class="navigation">
+    <section class="memeBg">
+        <div class="navigation">
             <a class="linkNav" href="create"><p class="btn">create your meme </p></a>
             <a class="linkNav" href="browse"><p class="btn">all memes</p></a>
+        </div>
     </section>
     <section class="hotMemes">
         <h1 class="titre darkgraytext">Hot Memes</h1>
+        <div class="getallMemes">
+            {% for hotMemes in allhotMemes %}
+            <a href="meme/{{hotMemes.id_m}}"><img class="oneMeme" src="{{hotMemes.meme}}"width="100" height="100"></a>
+            {% endfor %}
+        </div>
     </section>
 </main>
-{% endblock %}
+{% endblock %}  
+

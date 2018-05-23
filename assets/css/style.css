@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "RobotoReg";
+  src: url("../fonts/roboto-regular.ttf") format("opentype");
+}
+        
+
 .darkgrayBG{
   background-color: #444242;
 }
@@ -9,7 +15,7 @@
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Roboto';
+    font-family: 'RobotoReg';
 }
 
 .titre{
@@ -17,9 +23,18 @@ body {
   text-transform: uppercase;
   font-size: 20px;
 }
+
+.titleCreate{
+  margin-bottom: 50px;
+}
 .createImage{
   width: 100px;
   height:100px;
+}
+.subTitle{
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 35px 0 0 0;
 }
 nav {
     height: 80px;
@@ -46,15 +61,34 @@ nav {
   border: none;
 }
 
+.btn-save-dl{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dl{
+  width: 80%;
+}
+
+.save{
+  width:80%;
+}
+
+#memeTitle{
+  height: 30px;
+  width: 80%;
+}
 .navigation{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-top:10px;
   margin-bottom: 30px;
 }
 
-.btn{
+input.btn, .btn{
   border-image: linear-gradient(to right,#EC196E, #8267A8, #26AADA)1/ 2px;
   padding: 9px; 
   margin: 17px 0 0 0;
@@ -62,7 +96,14 @@ nav {
   font-size: 14px;
   text-align: center;
   cursor: pointer;
+  background-color: transparent;
 }
+
+.range{
+  display: flex;
+  align-items: center;
+}
+
 
 .linkNav{
   text-decoration: none;
@@ -81,11 +122,14 @@ footer{
   font-size: 10px;
 
 }
-
+#searchIn{
+  display: flex;
+  flex-direction: row;
+}
 
 .searchbarIn{
   height: 35px;
-  width: 220px;
+  width: 200px;
 }
 
 .multiselect {
@@ -94,7 +138,7 @@ footer{
 
 .selectBox {
   position: relative;
-  width: 260px;
+  width: 70%;
   margin: auto;
   height: 38px;
 
@@ -116,15 +160,28 @@ footer{
 
 }
 
-.errorBg{
-  background-image: url("../images/banniere.png");
+.getallMemes{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.oneMeme{
+  margin: 3px 0 3px 0;
 }
 
-.errorP{
-  color: red;
+#imgName{
+  margin: 25px 0 0 0;
+  font-size: 12px;
+  height: 33px;
+  padding: 0 0  0 4px;
 }
 
-/* Media queries */
+.uploadPic{
+  display: flex;
+  flex-direction: column;
+  
+}
 #checkboxes {
   display: none;
   border: 1px #dadada solid;
@@ -156,15 +213,80 @@ footer{
 .allImages{
   margin-top: 20px;
 }
+.introduction{
+  font-size: 14px;
+}
+input[type=range].custom-slider {
+ color: #444242;
+  cursor: pointer;
+}
+
+input[type=range].custom-slider::-moz-range-thumb {
+  width: 5px;
+  height: inherit;                /* s'adapte à la hauteur de l'input */
+  border: none;                   /* supprimer la bordure */
+  border-radius: 0;               /* supprimer le rayon */
+  background : linear-gradient(#EC196E, #8267A8, #26AADA);
+}
+
+textarea{
+  width: 80%;
+}
+
+select, textarea {
+ 
+  height: 30px;
+	margin: 2px;
+	padding: 0 4px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+  border : none;
+  border-bottom: 0.5px solid black;
+	font-size: 1em;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+
+  background: none;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+  
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
+
+
 @media (min-width: 992px) { 
+  
 .navigation{
+    /* padding: 60px; */
   flex-direction: row;
   justify-content: center;
 }
 
+.memeBg{
+  padding: 60px;
+  background-image: url("../medias/background/background.png");
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+  /* background-repeat: no-repeat; */
+}
+
 .btn{
   margin: 17px 20px 0 20px;
+  background-color: #E7F5F6;
 }
+
 nav {
   justify-content: space-between;
   height: 90px;
@@ -182,12 +304,16 @@ nav {
   width: 330px;
 }
 .linkNav{
+    display: flex;
+    
     width:20%;
   }
 }
-<<<<<<< HEAD:views/assets/css/style.css
-=======
-
->>>>>>> 4d8702950bd81147b1fecea63e425e76df78501d:assets/css/style.css
 
 @media (min-width: 1200px) {  }
+
+
+#meme-canvas {
+  width: 300px;
+  height: 300px;
+}

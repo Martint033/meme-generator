@@ -2,61 +2,48 @@
 
 require_once("utils/db.php");
 
-
-
-function getPictures(){
-//stNewPictureS
-   
+function hotMemes(){
     global $bdd;
-    $stps = $bdd->prepare('SELECT * FROM pictures');
-    $stps->execute();
-    $result = $stps->fetchAll(PDO::FETCH_ASSOC);
-    return $result;
+    $response = $bdd->prepare('SELECT id_m, title_m, meme, date_m FROM memes WHERE date_m <= CURRENT_TIMESTAMP() ORDER BY date_m DESC LIMIT 9');
+    $response->execute();
+    return $response->fetchAll(PDO::FETCH_ASSOC); 
 }
-getPictures();
 
-
-
-function getMemes(){
-    //stMemeS
-
+function addMeme($title,$memeURL,$newName_m, $id_picture){
     global $bdd;
-    $stms = $bdd->prepare('SELECT title_m, meme, date_m FROM memes');
-    $stms->execute();
-    var_dump($stms->fetchAll(PDO::FETCH_ASSOC));
-
-    return $stms->fetchAll(PDO::FETCH_ASSOC);
+    $response = $bdd->prepare("INSERT INTO memes(`title_m`,`meme`, newName_m, `date_m`, id_picture) VALUES (:title, :memeURL,:newName_m, CURRENT_TIMESTAMP, :id_picture)");
+    $response->bindParam(":title",$title);
+    $response->bindParam(":memeURL",$memeURL);
+    $response->bindParam(":newName_m",$newName_m);
+    $response->bindParam(":id_picture",$id_picture);
+    $response->execute();
+    return $response->fetchAll(PDO::FETCH_ASSOC); 
 }
-// getMemes();
 
-    
+function getMeme(){
+    global $bdd;
+    $id_m = $_GET['id'];
+    $response = $bdd->prepare("SELECT title_m, meme FROM memes WHERE id_m = :id_m");
+    $response->bindParam(':id_m', $id_m);
+    $response->execute();
+    return $response->fetch(PDO::FETCH_ASSOC);
+}
 
-// function insertNewPicture(){
-// //stNewPicture
+function getallMemes(){
+    global $bdd;
+    $response = $bdd->prepare("SELECT id_m, title_m, meme FROM memes");
+    $response->execute();
+    return $response->fetchAll(PDO::FETCH_ASSOC);
+}    
 
-//     global $bdd;
-//     $stnp = $bdd->prepare('INSERT INTO `pictures`(`title_p`, `picture`) VALUES (`title`, `pic`)');
-//     // $stnp->bindParam(':id_picture', $id_picture);
-//     $stnp->execute();
-//     var_dump($stnp->fetchAll(PDO::FETCH_ASSOC));
-
-//     return $stnp->fetchAll(PDO::FETCH_ASSOC);
-// }
-// insertNewPicture();
-
-// function insertNewMeme(){
-//     //stNewMeme
-    
-//     global $bdd;
-//     $stnm = $bdd->prepare('INSERT INTO `memes`(`title_m`, `meme`) VALUES (`title`, `mem`)'
-//     $stnm->execute();
-//     var_dump($stnm->fetchAll(PDO::FETCH_ASSOC));
-    
-//     return $stnm->fetchAll(PDO::FETCH_ASSOC));
-    
-// }
-// insertNewMeme();
-    
+function getsimilarMemes(){
+    global $bdd;
+    $id_p = $_GET['id'];
+    $response = $bdd->prepare("SELECT id_picture ,meme FROM memes WHERE id_picture = :id_p");
+    $response->bindParam(":id_p", $id_p);
+    $response->execute();
+    return $response->fetchAll(PDO::FETCH_ASSOC);
+}
 
 // function getMemeTag(){
     
@@ -68,8 +55,9 @@ function getMemes(){
 //     return ($stnm->fetch(PDO::FETCH_ASSOC));
 
 // }
-// getMemeTag();
 
+
+// obtenir les catégories
 function getTags(){
     global $bdd;
     $response = $bdd->prepare('SELECT tag FROM tag');
@@ -79,36 +67,34 @@ function getTags(){
     $response->closeCursor();
 }
 
-// function listImg () {
-    
-//     global $dbo;
-//     $response = $GLOBALS['bdd']->prepare('SELECT * FROM pictures');
-//     $response->execute();
-//     var_dump($response->fetchAll(PDO::FETCH_ASSOC));
-//     return $response->fetchAll(PDO::FETCH_ASSOC);
-// }
-// listImg();
-
-// function addImg ($img, $title) {
-    
-//     global $dbo;
-//     $response = ->prepare('INSERT INTO `pictures`(`title_p`, `picture`) VALUES ('.$title.' , '.$img.')');
-//     $response->execute();
-// }
+// afficher toutes les images 
 function listImg () {
     global $bdd;
-    $response = $bdd->prepare('SELECT * FROM image');
+    $response = $bdd->prepare('SELECT id_p, title_p, `picture`,`newName` FROM pictures');
     $response->execute();
     $allImages = $response->fetchAll(PDO::FETCH_ASSOC);
     return $allImages;
     $response->closeCursor();
 }
 
-
-function addImg ($img, $title) {
+// afficher une seule image sélectionnée
+function selectedImg(){
     global $bdd;
-    $response = $bdd->prepare('INSERT INTO `image`(`title`, `image`) VALUES (:title , :img)');
-    $response->bindParam(':title', $title);
-    $response->bindParam(':img', $img);
+    $newName = $_GET['id'];
+    $resultat = $bdd->prepare("SELECT `id_p`, `picture` FROM `pictures` WHERE `id_p` = :selectedImg");
+    $resultat->bindParam(':selectedImg', $newName, PDO::PARAM_INT);
+    $resultat->execute();   
+    $selectedImage = $resultat->fetch(PDO::FETCH_ASSOC);
+    return $selectedImage;
+}
+
+// ajouter une image
+function addImg ($title, $nom, $url) {
+    global $bdd;
+    $response = $bdd->prepare('INSERT INTO `pictures`(title_p, `picture`, `newName`) VALUES (:title,:chemin, :nom)');
+    $response->bindParam(':nom', $nom);
+    $response->bindParam(':chemin', $url);
+    $response->bindParam(':title',$title);
     $response->execute();
+    return $bdd->lastInsertId(); 
 }

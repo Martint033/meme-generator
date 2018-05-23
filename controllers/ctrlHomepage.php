@@ -2,6 +2,7 @@
     require("models/model.php");
 
     $posts = listImg();
+    $allhotMemes = hotMemes();
 
     require_once ('vendor/autoload.php');
 
@@ -11,4 +12,4 @@
     ));
 
     $template = $twig->load('homepage.html');
-    echo $template->render (array('imgBase'=>$posts));
+    echo $template->render (array('imgBase'=>$posts, 'allhotMemes'=>$allhotMemes));
