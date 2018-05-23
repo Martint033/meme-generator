@@ -21,30 +21,52 @@ body {
     font-family: 'RobotoReg';
 }
 
-.titre{
+/* Titles and subtitles */
+
+.title{
   text-align: center;
+  margin: 25px 0 0 0;
   text-transform: uppercase;
   font-size: 20px;
 }
 
-.titleCreate{
-  margin-bottom: 50px;
-}
-.createImage{
-  width: 100px;
-  height:100px;
-}
 .subTitle{
   font-size: 15px;
   text-transform: uppercase;
+  text-align: center;
   margin: 35px 0 0 0;
 }
+
+/*Input & boutons */
+
+input.btn, .btn{
+  border-image: linear-gradient(to right,#EC196E, #8267A8, #26AADA)1/ 2px;
+  padding: 9px; 
+  margin: 17px 0 0 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  width: 100%;
+}
+
+.submit-btn{
+  margin-top: 20px;
+}
+
+.btn:hover {
+    color: #25a5c4;
+}
+
+/*Template*/
+
 nav {
-    height: 80px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }   
 
 .logo{
@@ -64,10 +86,84 @@ nav {
   border: none;
 }
 
-textarea{
-  resize: none;
+/*Homepage*/
+
+.linkNav{
+  text-decoration: none;
+  color:#444242;
+  width:50%;
 }
 
+.navigation{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top:10px;
+  margin-bottom: 30px;
+}
+
+/* Create */
+
+.createImage{
+  width: 100px;
+  height:100px;
+}
+
+/*Search bar and select */
+
+#searchIn{
+  display: flex;
+  flex-direction: row;
+}
+
+.searchbarIn{
+  height: 35px;
+  width: 200px;
+}
+
+.multiselect {
+  width: 260px;
+}
+
+.selectBox {
+  position: relative;
+  width: 70%;
+  margin: auto;
+  height: 38px;
+}
+
+.selectBox {
+  width: 100%;
+  height: 100%;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #25a5c4;
+}
+
+/*Edit Meme */
+
+#memeTitle{
+  height: 30px;
+  width: 80%;
+  margin: 0 0 5px 0;
+  padding-left: 4px;
+}
+
+textarea{
+  resize: none;
+  margin: 10px 0 10px 0;
+}
 
 .btnSocial{
   display: flex;
@@ -90,20 +186,6 @@ textarea{
   width: 80%;
 }
 
-
-#memeTitle{
-  height: 30px;
-  width: 70%;
-  margin: 0;
-}
-
-#memeWidth{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-
-}
-
 .h2edit-meme{
   display: flex;
   justify-content: center;
@@ -116,38 +198,76 @@ textarea{
 .similar{
   margin-left: 40px;
 }
-.navigation{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top:10px;
-  margin-bottom: 30px;
-}
-
-input.btn, .btn{
-  border-image: linear-gradient(to right,#EC196E, #8267A8, #26AADA)1/ 2px;
-  padding: 9px; 
-  margin: 17px 0 0 0;
-  text-transform: uppercase;
-  font-size: 14px;
-  text-align: center;
-  cursor: pointer;
-  background-color: transparent;
-  width: 100%;
-}
 
 .range{
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.range-select{
+  margin : 15px 0 15px 0;
+}
+
+.text-size{
+  margin :0;
+  font-size: 14px;
+  padding: 0;
 }
 
 
-.linkNav{
-  text-decoration: none;
-  color:#444242;
-  width:50%;
+/* Size, contenu etc */
+input[type=range].custom-slider {
+  color: #444242;
+   cursor: pointer;
+ }
+ 
+ input[type=range].custom-slider::-moz-range-thumb {
+   width: 5px;
+   height: inherit;                /* s'adapte à la hauteur de l'input */
+   border: none;                   /* supprimer la bordure */
+   border-radius: 0;               /* supprimer le rayon */
+   background : linear-gradient(#EC196E, #8267A8, #26AADA);
+ }
+ 
+ select, textarea {
+   width: 100%;
+   height: 30px;
+   font-size: 14px;
+   padding-left: 4px;
+ }
+ 
+ input[type="color"] {
+   -web-kit-appearance: none;
+   border: none;
+ 
+   background: none;
+ }
+ input[type="color"]::-webkit-color-swatch-wrapper {
+   padding: 0;
+   
+ }
+
+ input[type="color"]::-webkit-color-swatch {
+   border: none;
+ }
+ 
+ .edit-meme{
+   display: flex;
+   flex-direction: column;
+   margin: auto;
+   text-align: center;
+   width: 90%;
+ }
+
+ .overSelect {
+  position: absolute;
+  height: 40px;
+  margin: auto;
+
 }
+ 
+/* Footer */
 
 footer{
   display: flex;
@@ -160,53 +280,18 @@ footer{
   font-size: 10px;
 
 }
-#searchIn{
-  display: flex;
-  flex-direction: row;
-}
 
-.searchbarIn{
-  height: 35px;
-  width: 200px;
-}
 
-.multiselect {
-  width: 260px;
-}
 
-.selectBox {
-  position: relative;
-  width: 70%;
-  margin: auto;
-  height: 38px;
-
-}
-
-.selectBox select {
-  width: 100%;
-  height: 100%;
-}
-
-.submit-btn{
-  margin-top: 20px;
-}
-
-.overSelect {
-  position: absolute;
-  height: 40px;
-  margin: auto;
-
-}
 
 .getallMemes{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .oneMeme{
-  margin-left: 25px;
   margin-bottom: 25px;
 }
 
@@ -222,29 +307,9 @@ footer{
   padding: 0 0  0 4px;
 }
 
-.uploadPic{
-  display: flex;
-  flex-direction: column;
-  
-}
-#checkboxes {
-  display: none;
-  border: 1px #dadada solid;
-}
 
-#checkboxes label {
-  display: block;
-}
 
-#checkboxes label:hover {
-  background-color: #25a5c4;
-}
 
-.btn:hover {
-    color: #25a5c4;
-}
-
-/* // et on masque le input */
 .input-file {
   display: none;
 }
@@ -263,58 +328,22 @@ footer{
 .introduction{
   font-size: 14px;
 }
-input[type=range].custom-slider {
- color: #444242;
-  cursor: pointer;
-}
 
-input[type=range].custom-slider::-moz-range-thumb {
-  width: 5px;
-  height: inherit;                /* s'adapte à la hauteur de l'input */
-  border: none;                   /* supprimer la bordure */
-  border-radius: 0;               /* supprimer le rayon */
-  background : linear-gradient(#EC196E, #8267A8, #26AADA);
-}
 
-textarea{
-  width: 80%;
-}
 
-select, textarea {
- 
-  height: 30px;
-	margin: 2px;
-}
-
-input[type="color"] {
-	-web-kit-appearance: none;
-	border: none;
-
-  background: none;
-}
-input[type="color"]::-webkit-color-swatch-wrapper {
-  padding: 0;
-  
-}
-input[type="color"]::-webkit-color-swatch {
-	border: none;
-}
-
-.edit-meme{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-}
 
 
 @media (min-width: 992px) { 
   
 .navigation{
   padding: 60px;
-  flex-direction: column;
-  justify-content: center;
+ 
+}
+
+.uploadPic{
+ 
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .memeBg{
