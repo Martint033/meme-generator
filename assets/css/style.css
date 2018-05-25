@@ -108,6 +108,7 @@ nav {
 .createImage{
   width: 100px;
   height:100px;
+  margin-bottom: 10%;
 }
 
 /*Search bar and select */
@@ -309,7 +310,6 @@ footer{
 
 
 
-
 .input-file {
   display: none;
 }
@@ -346,15 +346,21 @@ footer{
   justify-content: space-around;
 }
 
+.marginBg{
+  margin : 0;
+  padding : 0;
+}
+
 .memeBg{
   padding: 60px;
   background-image: url("../medias/background/background.png");
-  background-size: cover;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 300px;
-  width: auto;
+  text-align: center;
+  justify-content: center; */
+  /* height: auto;
+  width: 100%; */
+  /* background-repeat: no-repeat; */
 }
 
 .btn{
@@ -392,8 +398,8 @@ nav {
   width :50%;
 }
 
-    #meme-canvas {
-    width: 300px;
-    height: 300px;
-  } 
+#meme-canvas {
+  width: 300px;
+  height: 300px;
+}
 }
