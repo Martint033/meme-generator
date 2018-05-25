@@ -1,24 +1,19 @@
-{% extends 'template.html' %}
-{% block content %}
+{% extends 'template.html' %} {% block content %}
 <main>
-    <section class="navigation">
-            <h1 class="titre darkgraytext titleCreate">Create your meme</h1>
-            
-                <form action="upload" method="post" enctype="multipart/form-data">
-                    <a class="linkNav" ><label for="fileToUpload" class="btn">upload your image</label>
-                    <input name="fileToUpload" id="fileToUpload" class="input-file" type="file"></a>
-                    <div class="uploadPic">
-                      <input type="text" name="title" id="imgName" placeholder="Enter a name">
-                   
-                      <input type="submit" value="Go" name="submit" class="btn"> 
-                  
-                </form>
-            
-            <p class="subTitle">or select one below</p>
-    </section>
-     <section class="hotMemes">
-            
-                <!-- <input type="text" class="searchbarIn" placeholder="Search">
+  <h1 class="title darkgraytext">Create your meme</h1>
+  <section class="navigation">
+    <form action="upload" method="post" enctype="multipart/form-data">
+      <a class="linkNav">
+        <label for="fileToUpload" class="btn">upload your image</label>
+        <input name="fileToUpload" id="fileToUpload" class="input-file" type="file">
+      </a>
+      <input type="submit" value="Go" name="submit" class="btn">
+    </form>
+  </section>
+  <h2 class="subTitle darkgraytext">or select one below</h2>
+  <section class="hotMemes">
+
+    <!-- <input type="text" class="searchbarIn" placeholder="Search">
                 <a class="searchButtonIn"><i class="darkgraytext fas fa-search"></i></a>
               
             <form>
@@ -43,13 +38,15 @@
                     </div>
                   </div>
                   </form> -->
-              
-                  
-    </section>
-    <section class="allImages getallMemes">
-      {% for image in images %}
-      <a href="edit-meme/{{image.newName}}&{{image.id_p}}"><img class="createImage " src="{{image.picture}}" width="200" height="200"></a>
-      {% endfor %}
-    </section>
+
+
+  </section>
+  <section class="allImages getallMemes">
+    {% for image in images %}
+    <a href="edit-meme/{{image.newName}}&{{image.id_p}}">
+      <img class="createImage" src="{{image.picture}}" width="200" height="200">
+    </a>
+    {% endfor %}
+  </section>
 </main>
 {% endblock %}

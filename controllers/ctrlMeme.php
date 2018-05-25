@@ -2,6 +2,7 @@
     require("models/model.php");
 
     $oneMeme= getMeme();
+    // $sim = getsimilar();
     
     require 'vendor/autoload.php';
 
@@ -11,4 +12,5 @@
     ));
 
     $template = $twig->load('meme.html');
-    echo $template->render(array('meme'=>$oneMeme,));
+    echo $template->render(array('meme'=>$oneMeme));
+   

@@ -1,55 +1,45 @@
 {% extends 'template.html' %} {% block content %}
 
 <input type="hidden" name="id_picture" id="id_picture" value="{{selection.id_p}}">
-
 <h2 class="h2edit-meme">Create your meme</h2>
-
-<form id="form-meme" action="upload-meme" method="post">
-    <p>
-        <canvas id="meme-canvas" src="{{selection.picture}}"></canvas>
-    </p>
-
-    <p>
+<form action="upload-meme" method="post">
+    <div class="container">
+        <canvas id="meme-canvas" class="col-12" src="{{selection.picture}}"></canvas>
+        <img id="image-input" src="{{selection.picture}}" style="display: none;" width="100" height="100">
+        <textarea id="top-text"></textarea>
+        <div class="range range-select">
+            <p class="text-size">Text size :</p>
+            <input type="range" id="top-text-size-input" class="updateChange custom-slider" min="0.05" max="0.25" value="0.15" step="0.01">
+        </div>
         <textarea id="bottom-text"></textarea>
-        <div class="range">
-        <p>Text size:</p>
-        <input type="range" id="bottom-text-size-input" class="updateChange custom-slider" min="0.05" max="0.25" value="0.15" step="0.01">
+        <div class="range range-select">
+            <p class="text-size">Text size :</p>
+            <input type="range" id="bottom-text-size-input" class="updateChange custom-slider" min="0.05" max="0.25" value="0.15" step="0.01">
         </div>
-    </p>
-</form>
-
-<form id="form-meme">
-    <div class="range">
-        <p>Change text color :</p>
-        <input type="color" id="txtColor">
+        <div class="range range-select">
+            <p class="text-size col-5">Select a font :</p>
+            <select id="fontStyle" class="updateChange col-7">
+                <option value="default">all fonts</option>
+                <option value="Arial">Arial</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Times">Times</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Impact">Impact</option>
+            </select>
         </div>
         <div class="range">
-        <p>Select a font : </p>
-        <select id="fontStyle" class="updateChange">
-            <option value="default">all fonts</option>
-            <option value="Arial">Arial</option>
-            <option value="Helvetica">Helvetica</option>
-            <option value="Times">Times</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Impact">Impact</option>
-        </select>
+            <p>Change text color :</p>
+            <input type="color" id="txtColor">
+        </div>
+        <h3>Want to save your meme on our website ?</h3>
+        <input id="memeTitle" type="text" placeholder="Give your meme a name:">
+        <div class="btn-save-dl">
+            <input type="submit" value="Save" name="saveMeme" id="save" class="btn">
+            <a id="download" class="btn dl">download as image</a>
+        </div>
     </div>
 </form>
-
-<form id="form-meme"action="upload-meme" method="post">
-    <p>
-        <canvas id="meme-canvas" src="{{selection.picture}}"></canvas>
-    </p>
-
-    <p id="errorTitle">
-        <input id="memeTitle" type="text" placeholder="title of your meme">
-    </p>
-    <div class="btn-save-dl">
-        <input type="submit" value="Save" name="saveMeme" id="save" class="btn">
-        <a id="download" class="btn dl">download as image</a>
-    </div>
-
-</form>
+</div>
 
 <div id="fb-root">
     <script>
@@ -64,38 +54,6 @@
     </script>
 
 
-<div id="fb-root"></div>
-<script>
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.0';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<!--Bouton Twitter -->
-<div class="btnSocial">
-    <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="InfoWebMaster">Tweet</a>
-    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-
-
-<<<<<<< HEAD
-    <!--Bouton Facebook -->
-=======
-<<<<<<< HEAD
-    <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=button&size=large&mobile_iframe=true&width=91&height=58&appId"
-        width="91" height="58" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-=======
-<!--Bouton Facebook -->
->>>>>>> 17527522f51243e8ddc742957cf6006b986f851c
-
-    <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=button&size=large&mobile_iframe=true&width=91&height=58&appId"
-        width="91" height="58" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-</div>
->>>>>>> 41d9cba36b354770ab1e39ac8d09b6e32afdbf06
 
 <!--Bouton Like Facebook, servez vous -->
 
@@ -105,13 +63,24 @@ scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:65px; 
 
 <h3>Similar : </h3>
 
-<<<<<<< HEAD
-    {% for memes in similarMemes %}
-    <img class="similar" src="{{memes.meme}}" alt="" width="200" height="200"> {% endfor %} {% endblock %}
+    <!--Bouton Twitter -->
+    <div class="btnSocial">
+        <a href="http://twitter.com/share" class="twitter-share-button share-button" data-count="vertical" data-via="InfoWebMaster"
+            width="91" height="58">Tweet</a>
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 
-=======
+        <!--Bouton Facebook -->
+
+        <iframe class="share-button" src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fclaireb.promo-17.codeur.online%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=button&size=large&mobile_iframe=true&width=91&height=58&appId"
+            width="91" height="58" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
+            allow="encrypted-media"></iframe>
+    </div>
+</div>
+</div>
+
+<h3 class="similar">Similar : </h3>
+
 {% for memes in similarMemes %}
 <img src="{{memes.meme}}" alt="" width="100" height="100"> {% endfor %} {% endblock %} {% block script %}
 <script src="assets/js/editmeme.js"></script>
 {% endblock %}
->>>>>>> 41d9cba36b354770ab1e39ac8d09b6e32afdbf06
