@@ -13,7 +13,14 @@ require("models/model.php");
 
 $title = $_POST['memeTitle'];
 $id_picture = $_POST['id_picture'];
-addMeme($title, $memeURL, $newName_m, $id_picture);
+$result = addMeme($title, $memeURL, $newName_m, $id_picture);
+if ($result == TRUE) {
+    echo json_encode(TRUE);
+}
+
+else {
+    echo json_encode(FALSE);
+}
 
 
 

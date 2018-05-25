@@ -7,11 +7,14 @@
         <label for="fileToUpload" class="btn">upload your image</label>
         <input name="fileToUpload" id="fileToUpload" class="input-file" type="file">
       </a>
-      <input type="submit" value="Go" name="submit" class="btn">
+      <p id="save-file"></p>
+      <input type="submit" id="submit-picture" value="Go" name="submit" class="btn">
     </form>
   </section>
   <h2 class="subTitle darkgraytext">or select one below</h2>
   <section class="hotMemes">
+
+  
 
     <!-- <input type="text" class="searchbarIn" placeholder="Search">
                 <a class="searchButtonIn"><i class="darkgraytext fas fa-search"></i></a>
@@ -49,4 +52,9 @@
     {% endfor %}
   </section>
 </main>
+{% endblock %}
+
+
+{% block script %}
+    <script src="assets/js/create.js"></script>
 {% endblock %}

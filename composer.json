@@ -1,6 +1,4 @@
 {
-<<<<<<< HEAD
-=======
     "name": "root/meme-generator",
     "authors": [
         {
@@ -8,7 +6,6 @@
             "email": "martint033@gmail.com"
         }
     ],
->>>>>>> 6857c2fcebbfe2bbc12a8380c5b86170e971d9a1
     "require": {
         "twig/twig": "^2.0"
     }

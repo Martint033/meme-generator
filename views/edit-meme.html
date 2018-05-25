@@ -1,4 +1,5 @@
-{% extends 'template.html' %} {% block content %}
+{% extends 'template.html' %} 
+{% block content %}
 
 <input type="hidden" name="id_picture" id="id_picture" value="{{selection.id_p}}">
 <h2 class="h2edit-meme">Create your meme</h2>
@@ -35,31 +36,31 @@
         <input id="memeTitle" class="col-12"type="text" placeholder="Give your meme a name:">
         <div class="btn-save-dl">
             <input type="submit" value="Save" name="saveMeme" id="save" class="btn">
+            <p id="uploadStat"></p>
             <a id="download" class="btn dl">download as image</a>
         </div>
+    </form>
     </div>
-</form>
-</div>
 
-<div id="fb-root">
-    <script>
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.0';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+    <div id="fb-root">
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.0';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
 
-    <!--Bouton Twitter -->
-    <div class="btnSocial">
-        <a href="http://twitter.com/share" class="twitter-share-button share-button" data-count="vertical" data-via="InfoWebMaster"
-            width="91" height="58">Tweet</a>
-        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        <!--Bouton Twitter -->
+        <div class="btnSocial">
+            <a href="http://twitter.com/share" class="twitter-share-button share-button" data-count="vertical" data-via="InfoWebMaster"
+                width="91" height="58">Tweet</a>
+            <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 
-        <!--Bouton Facebook -->
+            <!--Bouton Facebook -->
 
         <iframe class="share-button pw-button-facebook" src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fclaireb.promo-17.codeur.online%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=button&size=large&mobile_iframe=true&width=91&height=58&appId"
             width="91" height="58" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
