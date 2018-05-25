@@ -108,6 +108,7 @@ nav {
 .createImage{
   width: 100px;
   height:100px;
+  margin-bottom: 10%;
 }
 
 /*Search bar and select */
@@ -345,15 +346,20 @@ footer{
   justify-content: space-around;
 }
 
+.marginBg{
+  margin : 0;
+  padding : 0;
+}
+
 .memeBg{
   padding: 60px;
   background-image: url("../medias/background/background.png");
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: center;
-  height: auto;
-  width: auto;
+  justify-content: center; */
+  /* height: auto;
+  width: 100%; */
   /* background-repeat: no-repeat; */
 }
 
