@@ -1,11 +1,7 @@
 @font-face {
   font-family: "RobotoReg";
   src: url("../fonts/roboto-regular.ttf") format("opentype");
-}
-        
-.title_m{
-  text-transform: uppercase;
-}
+}    
 
 .darkgrayBG{
   background-color: #444242;
@@ -37,6 +33,19 @@ body {
   margin: 35px 0 0 0;
 }
 
+.transition{
+  font-size:15px;
+  padding: 0;
+  margin: 35px 0 10px 0;
+  width:100%; 
+
+}
+
+.nom-site{
+  color: white;
+  font-family: "RobotoReg";
+  margin-bottom: 0;
+}
 /*Input & boutons */
 
 input.btn, .btn{
@@ -59,6 +68,11 @@ input.btn, .btn{
     color: #25a5c4;
 }
 
+#memeTitle{
+  width: 100%;
+  height: 40px;
+  padding-left: 4px;
+}
 /*Template*/
 
 nav {
@@ -106,6 +120,7 @@ nav {
 /* Create */
 
 .createImage{
+  margin: 4px 0 4px 0;
   width: 100px;
   height:100px;
   margin-bottom: 10%;
@@ -154,12 +169,6 @@ nav {
 
 /*Edit Meme */
 
-#memeTitle{
-  height: 30px;
-  width: 80%;
-  margin: 0 0 5px 0;
-  padding-left: 4px;
-}
 
 textarea{
   resize: none;
@@ -184,7 +193,7 @@ textarea{
 }
 
 .dl{
-  width: 80%;
+  width: 100%;
 }
 
 .h2edit-meme{
@@ -267,7 +276,70 @@ input[type=range].custom-slider {
   margin: auto;
 
 }
- 
+
+.getallMemes{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+/*Meme*/
+
+.title_m{
+  text-transform: uppercase;
+}
+
+.oneMeme{
+  margin-bottom: 25px;
+}
+
+.similar-memes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 5px 0 5px 0;
+  padding: 0;
+}
+.img-meme{
+  height: 320px;
+  margin: 5px 0 5px 0;
+}
+
+.transition-sim{
+  padding-left: 13px;
+}
+/*A trier*/
+
+
+#imgName{
+  margin: 25px 0 0 0;
+  font-size: 12px;
+  height: 33px;
+  padding: 0 0  0 4px;
+}
+
+.input-file {
+  display: none;
+}
+
+.submit-categories{
+  margin: 20px;
+}
+
+.allImages{
+  margin-top: 20px;
+}
+
+.displayMeme{
+  width :80%;
+}
+
+.introduction{
+  font-size: 14px;
+}
+
+
+
 /* Footer */
 
 footer{
@@ -285,58 +357,12 @@ footer{
 
 
 
-.getallMemes{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.oneMeme{
-  margin-bottom: 25px;
-}
-
-
-.similar {
-  text-align: center;
-}
-
-#imgName{
-  margin: 25px 0 0 0;
-  font-size: 12px;
-  height: 33px;
-  padding: 0 0  0 4px;
-}
-
-
-
-.input-file {
-  display: none;
-}
-
-.submit-categories{
-  margin: 20px;
-}
-
-.allImages{
-  margin-top: 20px;
-}
-
-.displayMeme{
-  width :80%;
-}
-.introduction{
-  font-size: 14px;
-}
-
-
-
-
 
 @media (min-width: 992px) { 
   
 .navigation{
   padding: 60px;
+  flex-direction: row;
  
 }
 
