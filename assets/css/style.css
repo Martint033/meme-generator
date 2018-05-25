@@ -18,7 +18,9 @@ body {
 }
 
 /* Titles and subtitles */
-
+h1,h2{
+  text-align: center;
+}
 .title{
   text-align: center;
   margin: 25px 0 0 0;
@@ -45,9 +47,17 @@ body {
   color: white;
   font-family: "RobotoReg";
   margin-bottom: 0;
+  font-size:14px;
 }
 /*Input & boutons */
 
+.uploadYimage{
+  width: 200%;
+}
+
+btn-uploadYimage{
+  width: 500Px;
+}
 input.btn, .btn{
   border-image: linear-gradient(to right,#EC196E, #8267A8, #26AADA)1/ 2px;
   padding: 9px; 
@@ -287,6 +297,7 @@ input[type=range].custom-slider {
 
 .title_m{
   text-transform: uppercase;
+  margin: 10px 0 10px 0;
 }
 
 .oneMeme{
@@ -331,7 +342,7 @@ input[type=range].custom-slider {
 }
 
 .displayMeme{
-  width :80%;
+  width :100%;
 }
 
 .introduction{
@@ -355,7 +366,18 @@ footer{
 }
 
 
+.reseaux-sociaux{
+  display :flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 10px 0;
+  justify-content: space-around;
 
+}
+
+.fb-margin{
+  margin: 10px;
+}
 
 
 @media (min-width: 992px) { 
@@ -366,8 +388,8 @@ footer{
  
 }
 
-.uploadPic{
- 
+.uploadpic{
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
