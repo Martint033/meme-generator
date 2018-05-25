@@ -17,7 +17,7 @@ function addMeme($title,$memeURL,$newName_m, $id_picture){
     $response->bindParam(":newName_m",$newName_m);
     $response->bindParam(":id_picture",$id_picture);
     $response->execute();
-    return $response->fetchAll(PDO::FETCH_ASSOC); 
+    return TRUE; 
 }
 
 function getMeme(){
