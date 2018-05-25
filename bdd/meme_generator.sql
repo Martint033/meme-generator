@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 22 mai 2018 à 17:30
+-- Généré le :  ven. 25 mai 2018 à 10:38
 -- Version du serveur :  10.1.30-MariaDB
 -- Version de PHP :  7.2.2
 
@@ -86,15 +86,12 @@ CREATE TABLE `memes` (
 --
 
 INSERT INTO `memes` (`id_m`, `title_m`, `meme`, `newName_m`, `date_m`, `id_picture`) VALUES
-(11, 'TEST', 'assets/medias/memes/5b040e2248c02.png', '5b040e2248c02', '2018-05-22 12:33:38', 6),
-(12, 'TEST', 'assets/medias/memes/5b040ed4c2ceb.png', '5b040ed4c2ceb', '2018-05-22 12:36:36', 16),
-(13, 'TEST', 'assets/medias/memes/5b04125840851.png', '5b04125840851', '2018-05-22 12:51:36', 17),
-(14, 'TEST', 'assets/medias/memes/5b0413f5da9a4.png', '5b0413f5da9a4', '2018-05-22 12:58:29', 8),
+(11, 'not rangutan', 'assets/medias/memes/5b040e2248c02.png', '5b040e2248c02', '2018-05-22 12:33:38', 6),
+(12, 'sexy php', 'assets/medias/memes/5b040ed4c2ceb.png', '5b040ed4c2ceb', '2018-05-22 12:36:36', 16),
+(13, 'Friday like', 'assets/medias/memes/5b04125840851.png', '5b04125840851', '2018-05-22 12:51:36', 17),
+(14, 'code not working', 'assets/medias/memes/5b0413f5da9a4.png', '5b0413f5da9a4', '2018-05-22 12:58:29', 8),
 (15, 'petite chatte', 'assets/medias/memes/5b041e37c0b18.png', '5b041e37c0b18', '2018-05-22 13:42:15', 6),
-(32, 'hamster qui rit', 'assets/medias/memes/5b04293a6a4a1.png', '5b04293a6a4a1', '2018-05-22 14:29:14', 10),
-(33, 'good night cat', 'assets/medias/memes/5b042a1533c37.jpg', '5b042a1533c37', '2018-05-22 14:32:53', 18),
-(35, 'hello barakstein', 'assets/medias/memes/5b04337936d4c.jpg', '5b04337936d4c', '2018-05-22 15:12:57', 16),
-(36, 'bg einstein', 'assets/medias/memes/5b0433ff07649.jpg', '5b0433ff07649', '2018-05-22 15:15:11', 16);
+(32, 'hamster qui rit', 'assets/medias/memes/5b04293a6a4a1.png', '5b04293a6a4a1', '2018-05-22 14:29:14', 10);
 
 -- --------------------------------------------------------
 
@@ -182,13 +179,13 @@ ALTER TABLE `tag`
 -- AUTO_INCREMENT pour la table `memes`
 --
 ALTER TABLE `memes`
-  MODIFY `id_m` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_m` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT pour la table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
