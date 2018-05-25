@@ -143,13 +143,18 @@ document.getElementById('save').addEventListener('click', function(e) {
         };
         // requete php
         fetch("upload-meme", paramAjax).then(function(response){
-            return response.text();
+            return response.json();
         }).then (function (response){
-            console.log(response);
+            if (response == "true"){
+                document.getElementById('uploadStat').innerHTML = "Upload success, you can see you're meme on our site";
+            }
+            else {
+                document.getElementById('uploadStat').innerHTML = "Upload failed, please try again";
+            }
         });
     }
     else { 
-        document.getElementById('uploadStat').innerHTML += "Please give your meme a name";
+        document.getElementById('uploadStat').innerHTML = "Please give your meme a name";
     }
 });
 

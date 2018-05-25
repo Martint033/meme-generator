@@ -2,7 +2,7 @@
 $data = $_POST['save'];
 
 $newName_m = uniqid();
-$memeURL = "/assets/medias/memes/".$newName_m.".jpg";
+$memeURL = "assets/medias/memes/".$newName_m.".jpg";
 
 list($type, $data) = explode(';', $data);
 list(, $data)      = explode(',', $data);
@@ -14,12 +14,12 @@ require("models/model.php");
 $title = $_POST['memeTitle'];
 $id_picture = $_POST['id_picture'];
 $result = addMeme($title, $memeURL, $newName_m, $id_picture);
-if ($result == TRUE) {
-    echo json_encode(TRUE);
+if ($result == "true") {
+    echo json_encode("true");
 }
 
 else {
-    echo json_encode(FALSE);
+    echo json_encode("false");
 }
 
 
