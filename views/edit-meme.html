@@ -31,8 +31,8 @@
             <p>Change text color :</p>
             <input type="color" id="txtColor">
         </div>
-        <h3>Want to save your meme on our website ?</h3>
-        <input id="memeTitle" type="text" placeholder="Give your meme a name:">
+        <h3 class="transition col-12">Want to save your meme on our website ?</h3>
+        <input id="memeTitle" class="col-12"type="text" placeholder="Give your meme a name:">
         <div class="btn-save-dl">
             <input type="submit" value="Save" name="saveMeme" id="save" class="btn">
             <a id="download" class="btn dl">download as image</a>
@@ -61,16 +61,21 @@
 
         <!--Bouton Facebook -->
 
-        <iframe class="share-button" src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fclaireb.promo-17.codeur.online%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=button&size=large&mobile_iframe=true&width=91&height=58&appId"
+        <iframe class="share-button pw-button-facebook" src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fclaireb.promo-17.codeur.online%2Fmeme-generator%2Fedit-meme%2F848cf1eba58093163ae8a2769876c1b9%2611&layout=button&size=large&mobile_iframe=true&width=91&height=58&appId"
             width="91" height="58" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
             allow="encrypted-media"></iframe>
     </div>
 </div>
 </div>
-
-<h3 class="similar">Similar : </h3>
-
+<div class="container">
+<h3 class="transition transition-sim col-12">Similar : </h3>
+<div class="similar-memes">
 {% for memes in similarMemes %}
-<img src="{{memes.meme}}" alt="" width="100" height="100"> {% endfor %} {% endblock %} {% block script %}
+<img class="col-12 img-meme" src="{{memes.meme}}" alt="" width="150" height="150">
+ {% endfor %} 
+ </div>
+ </div>
+{% endblock %} 
+{% block script %}
 <script src="assets/js/editmeme.js"></script>
 {% endblock %}
