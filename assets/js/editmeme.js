@@ -132,13 +132,11 @@ document.getElementById('save').addEventListener('click', function(e) {
     e.preventDefault();
     
     var title = document.getElementById('memeTitle');
-    console.log(title.value);
     if (title.value.length > 1 ){
         var data = new FormData();
         data.append("save", canvas.toDataURL("image/jpg"));
         data.append('id_picture', document.getElementById("id_picture").value);
         data.append('memeTitle', title.value);
-        console.log(document.getElementById("id_picture").value);
         var paramAjax = {
             method : "POST",
             body : data,
@@ -147,11 +145,11 @@ document.getElementById('save').addEventListener('click', function(e) {
         fetch("upload-meme", paramAjax).then(function(response){
             return response.text();
         }).then (function (response){
-
+            console.log(response);
         });
     }
     else { 
-        document.getElementById('errorTitle').innerHTML += "Please give your meme a name";
+        document.getElementById('uploadStat').innerHTML += "Please give your meme a name";
     }
 });
 
