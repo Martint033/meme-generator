@@ -2,13 +2,19 @@
 <main>
   <h1 class="title darkgraytext">Create your meme</h1>
   <section class="navigation">
-    <form action="upload" class="uploadpic" method="post" enctype="multipart/form-data">
-      <a class="linkNav ">
-        <label for="fileToUpload" class="btn btn-uploadYimage">upload your image</label>
-        <input name="fileToUpload" id="fileToUpload" class="input-file uploadYimage" type="file">
-      </a>
-      <p id="save-file" class="uploadYimage"></p>
-      <input type="submit" id="submit-picture" value="Go" name="submit" class="btn">
+        
+      <form action="upload" method="post" class="uploadpic" enctype="multipart/form-data">
+      <div clas="row">
+        <a class="linkNavCreate">
+          <label for="fileToUpload" class="btn btn-uploadYimage">upload your image</label>
+          <input name="fileToUpload" id="fileToUpload" class="input-file uploadYimage" type="file">
+        </a>
+      </div>
+
+      <div class="row">
+        <p id="save-file"></p>
+        <input type="submit" id="submit-picture" value="Go" name="submit" class="btn">
+    </div>
     </form>
   </section>
   <h2 class="subTitle darkgraytext">or select one below</h2>

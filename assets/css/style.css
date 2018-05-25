@@ -433,9 +433,15 @@ nav {
 .searchbar{
   width: 330px;
 }
+
+.linkNavCreate{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 120%;
+}
 .linkNav{
     display: flex;
-    
     width:20%;
   }
 }
