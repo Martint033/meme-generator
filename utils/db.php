@@ -6,5 +6,4 @@ catch(Exception $e) {
     die('Erreur:'.$e->getMessage());
 }
 
-// 'claireb', '7TQUD3FakR
 ?>
